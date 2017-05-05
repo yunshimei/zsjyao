@@ -62,7 +62,7 @@
             <view class="flex-item">餐桌成员</view>
         </view>
     </view>
-    <view class="member-list flex">
+    <view class="list-continer flex">
         <view class="member-item">
             <view><image class="head-por" mode="scaleToFill" src="/images/member-img.jpg"></image></view>
             <text>萌妹纸</text>
