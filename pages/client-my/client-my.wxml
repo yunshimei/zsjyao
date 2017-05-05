@@ -1,0 +1,13 @@
+<scroll-view scroll-y="true" class="body">
+    <view class="my-info">
+        <image src="/images/my-info-bg.jpg" mode="scaleToFill"></image>
+    </view>
+    <view class="box">
+        <view class="list-title  border-after">
+            <view class="main flex-wrp flex-justify">
+                <view class="flex-item">优惠券</view>
+                <view><text class="coupon-num">共10张</text></view>
+            </view>
+        </view>
+    </view>
+</scroll-view>

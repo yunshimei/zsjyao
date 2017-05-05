@@ -1,0 +1,343 @@
+/**app.wxss**/
+@import "pages/Template/footer/footer.wxss";  
+
+.body{
+      font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333333;
+      font-size: 24rpx;
+      box-sizing: border-box;
+}
+Page{
+  background-color: #f8f8f8;
+}
+/**文字**/
+.gray-text{
+  color: #666666;
+}
+.red-text{
+  color:#f2582a;
+}
+/**上边框**/
+.border-befor::before,.border-after::after{
+    content: " ";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    border-top: 2rpx solid #e5e5e5;
+    color: #e5e5e5;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    z-index: 2;
+}
+.border-befor::before{
+  top: 0;
+}
+.border-after::after{
+  bottom:0;
+}
+
+
+/**布局**/
+.flex-wrp{
+  display: flex;
+  display: -webkit-flex;
+  -webkit-flex-wrap:nowrap;
+	flex-wrap:nowrap;
+}
+.flex{
+  display:-webkit-flex;
+	display:flex;
+  -webkit-flex-wrap:wrap;
+	flex-wrap:wrap;
+}
+.flex-item{
+  flex: 1;
+}
+.flex-justify{
+  -webkit-justify-content:space-between;
+	justify-content:space-between;
+}
+.flex-algin-c{
+    -webkit-align-self: center;
+	  align-self: center;
+}
+.flex-algin-e{
+  -webkit-align-self: flex-end;
+	align-self: flex-end;
+}
+.box{
+  background-color: #fff;
+  margin-bottom: 30rpx;
+}
+
+/**字体图标**/
+@font-face {
+  font-family: 'iconfont';  /* project id 288852 */
+  src: url('//at.alicdn.com/t/font_t0kvzdqkyjm50zfr.eot');
+  src: url('//at.alicdn.com/t/font_t0kvzdqkyjm50zfr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_t0kvzdqkyjm50zfr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_t0kvzdqkyjm50zfr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_t0kvzdqkyjm50zfr.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-style:normal; 
+}
+
+/**按钮**/
+.redBtn,.greenBtn{
+  padding: 14rpx 24rpx;
+  border-radius: 3px;
+}
+.redBtn{
+  border: 2rpx solid #f2582a;
+  color: #f2582a;
+}
+.greenBtn{
+  border: 2rpx solid #18a672;
+  color: #18a672;
+}
+
+
+
+
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+
+/**皮肤头部**/
+.skin-box{
+  width: 100%;
+  height: 200rpx;
+  line-height: 160rpx;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+.skin-box .skin-img{
+  width: 100%;
+  max-height: 200rpx;
+}
+.skin-box .skin-text{
+  text-align: center;
+  color:#fff;
+  text-shadow: 4rpx 4rpx 8rpx #9f0100;
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+/**列表表头**/
+.list-title{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  flex-direction:row;
+  position: relative;
+}
+.list-title .submit-menu{
+  text-align: right;
+  color:#f2582a;
+}
+.list-title .main{
+  padding: 0 15px;
+}
+.list-main{
+  flex-direction:row;
+  font-size: 26rpx;
+  padding: 20rpx 30rpx 0 30rpx;
+}
+.list-main .dish-name{
+  width: 33.3%;
+  padding-bottom: 20rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+}
+/**菜品分类**/
+.dish-class{
+  background-color: #fff;
+  color: #666666;
+  padding: 0 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  position: fixed;
+  top: 350rpx;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  overflow-x: hidden;
+  
+}
+.dish-class .item{
+  padding: 0 20rpx 18rpx 20rpx;
+  margin: 0 20rpx;
+}
+.dish-class .active{
+  color: #f2582a;
+  border-bottom: 4rpx solid #f2582a;
+}
+
+/**菜品列表**/
+.dish-main{
+  position: absolute;
+  top: 430rpx;
+  left: 0;
+  right: 0;
+  
+  background-color: #fff;
+  padding-bottom: 15px;
+}
+.dish-list{
+  padding-left: 30rpx;
+}
+.dish-item{
+  width: 33.33%;
+  margin-top: 30rpx;
+}
+.dish-item-m{
+  padding-right: 38rpx;
+}
+.dish-item .dish-img{
+  width: 200rpx;
+  max-height: 200rpx;
+  border-radius: 10rpx;
+  margin-bottom: 10rpx;
+  font-size: 0;
+}
+.dish-item .name{
+  font-size: 26rpx;
+}
+.dish-item .price{
+  font-size: 22rpx;
+  padding-top: 10rpx;
+  text-align: left;
+}
+.number{
+  text-align: right;
+  -webkit-align-self: flex-end;
+	align-self: flex-end;
+}
+.add-icon,.minus-icon{
+  width: 32rpx;
+  height: 32rpx;
+}
+.num{
+  font-size: 28rpx;
+  padding: 0 10rpx;
+}
+.num-input{
+  width: 120rpx;
+  height: 80rpx;
+}
+.dish-item .no-img{
+  width: 200rpx;
+  border-radius: 10rpx;
+  padding-top: 16rpx;
+  box-sizing: border-box;
+}
+
+/**广告横幅banner**/
+.banner{
+  width: 100%;
+  position: relative;
+}
+.banner .banner-img{
+  width: 100%;
+  max-height: 350rpx;
+}
+
+/**桌号**/
+.desk-num{
+  width: 100%;
+  height: 106rpx;
+  background-color: #f8f8f8;
+  line-height: 106rpx;
+  text-align: center;
+  font-size: 38rpx;
+  color: #f2582a;
+  font-weight: bold;
+}
+
+/**已点列表**/
+.order-list{
+  margin-left: 30rpx;
+  position: relative;
+  padding-bottom: 30rpx;
+}
+
+/**单选框**/
+.all-chose{
+  text-align: right;
+  padding-right: 30rpx;
+}
+.radio-size{
+  transform:scale(.7);
+}
+
+/**合计栏**/
+.total{
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 30rpx;
+}
+.total .price{
+  font-size: 30rpx;
+  color: #f2582a;
+  font-weight: bold;
+}
+
+/**按钮栏**/
+.btn-group{
+  height: 30rpx;
+  padding: 15rpx 30rpx 50rpx 30rpx;
+}
+
+/**成员列表**/
+.member-list{
+  padding-top: 30rpx;
+}
+.member-item{
+  width: 25%;
+  text-align: center;
+  margin-bottom: 30rpx;
+}
+.head-por{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 8px;
+}
+
+/**我的页面**/
+.my-info{
+  width: 100%;
+  height: 160rpx;
+}
+.my-info image{
+  width: 100%;
+  height: 100%;
+}
+.coupon-num{
+  color: #f2582a;
+}
+.coupon-num::after{
+  content: "\e612";
+  font-family: "iconfont";
+}
+
+ 
+

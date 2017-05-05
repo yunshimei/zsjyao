@@ -1,0 +1,35 @@
+{
+  "pages":[
+    "pages/client-menu/client-menu",
+    "pages/client-sel/client-sel",
+    "pages/client-my/client-my"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#3a3b3e",
+    "navigationBarTitleText": "菜单",
+    "navigationBarTextStyle":"light",
+    "backgroundColor": "#eeeeee"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/client-menu/client-menu",
+      "text": "菜单",
+      "iconPath":"/images/menu.png",
+      "selectedIconPath":"/images/menu-sel.png"
+    }, {
+      "pagePath": "pages/client-sel/client-sel",
+      "text": "已点",
+      "iconPath":"/images/order.png",
+      "selectedIconPath":"/images/order-sel.png"
+    }, {
+      "pagePath": "pages/client-my/client-my",
+      "text": "我的",
+      "iconPath":"/images/my.png",
+      "selectedIconPath":"/images/my-sel.png"
+    }],
+    "color":"#666666",
+    "selectedColor":"#f2582a",
+    "backgroundColor":"#fff"
+  }
+}

@@ -1,0 +1,231 @@
+<!--index.wxml-->
+<view class="body">
+    <view class="skin-box">
+        <image class="skin-img" src="/images/skin-bg.jpg">
+            <text class="skin-text">老码头火锅红牌楼店</text>
+        </image>
+    </view>
+    <view class="sel-list">
+        <view class="list-title  border-after">
+            <view class="main flex-wrp">
+                <view class="flex-item"><span>7</span>号桌以点</view>
+                <view class="submit-menu">提交菜单</view>
+            </view>
+        </view>
+        <view class="list-main flex">
+            <text class="dish-name">老鸭鸳鸯锅</text>
+            <text class="dish-name">老鸭鸳鸯锅</text>
+            <text class="dish-name">老鸭鸳鸯锅</text>
+        </view>
+    </view>
+    <scroll-view scroll-x="true" class="dish-class border-after">
+        <text class="item active">火锅</text>
+        <text class="item">荤菜</text>
+        <text class="item">凉菜</text>
+        <text class="item">素菜</text>
+        <text class="item">酒水</text>
+        <text class="item">荤菜</text>
+        <text class="item">凉菜</text>
+        <text class="item">素菜</text>
+        <text class="item">酒水</text>
+    </scroll-view>
+    <scroll-view scroll-y="true" class="dish-main">
+        <view class="dish-list flex">
+            <view class="dish-item">
+                <view class="dish-item-m">
+                    <image class="dish-img" src="/images/dish-img.jpg" mode="scaleToFill"></image>
+                    <text class="name">凉拌青笋</text>
+                    <view class="flex-wrp flex-justify">
+                        <text class="flex-item price">￥10.00</text>
+                        <view class="flex-wrp number">
+                            <image class="minus-icon" src="/images/minus.png"></image>
+                            <text class="num">1</text>
+                            <image class="add-icon" src="/images/add.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="dish-item">
+                <view class="dish-item-m">
+                    <image class="dish-img" src="/images/dish-img.jpg" mode="scaleToFill"></image>
+                    <text class="name">凉拌青笋</text>
+                    <view class="flex-wrp flex-justify">
+                        <text class="flex-item price">￥10.00</text>
+                        <view class="flex-wrp number">
+                            <image class="add-icon" src="/images/add.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="dish-item">
+                <view class="dish-item-m">
+                    <image class="dish-img" src="/images/dish-img.jpg" mode="scaleToFill"></image>
+                    <text class="name">凉拌青笋</text>
+                    <view class="flex-wrp flex-justify">
+                        <text class="flex-item price">￥10.00</text>
+                        <view class="flex-wrp number">
+                            <image class="add-icon" src="/images/add.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="dish-item">
+                <view class="dish-item-m">
+                    <image class="dish-img" src="/images/dish-img.jpg" mode="scaleToFill"></image>
+                    <text class="name">凉拌青笋</text>
+                    <view class="flex-wrp flex-justify">
+                        <text class="flex-item price">￥10.00</text>
+                        <view class="flex-wrp number">
+                            <image class="add-icon" src="/images/add.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="dish-item">
+                <view class="dish-item-m">
+                    <image class="dish-img" src="/images/dish-img.jpg" mode="scaleToFill"></image>
+                    <text class="name">凉拌青笋</text>
+                    <view class="flex-wrp flex-justify">
+                        <text class="flex-item price">￥10.00</text>
+                        <view class="flex-wrp number">
+                            <image class="add-icon" src="/images/add.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="dish-item">
+                <view class="dish-item-m">
+                    <image class="dish-img" src="/images/dish-img.jpg" mode="scaleToFill"></image>
+                    <text class="name">凉拌青笋</text>
+                    <view class="flex-wrp flex-justify">
+                        <text class="flex-item price">￥10.00</text>
+                        <view class="flex-wrp number">
+                            <image class="add-icon" src="/images/add.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="dish-item">
+                <view class="dish-item-m">
+                    <image class="dish-img" src="/images/dish-img.jpg" mode="scaleToFill"></image>
+                    <text class="name">凉拌青笋</text>
+                    <view class="flex-wrp flex-justify">
+                        <text class="flex-item price">￥10.00</text>
+                        <view class="flex-wrp number">
+                            <image class="minus-icon" src="/images/minus.png"></image>
+                            <text class="num">1</text>
+                            <image class="add-icon" src="/images/add.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="dish-item">
+                <view class="dish-item-m">
+                    <image class="dish-img" src="/images/dish-img.jpg" mode="scaleToFill"></image>
+                    <text class="name">凉拌青笋</text>
+                    <view class="flex-wrp flex-justify">
+                        <text class="flex-item price">￥10.00</text>
+                        <view class="flex-wrp number">
+                            <image class="minus-icon" src="/images/minus.png"></image>
+                            <text class="num">1</text>
+                            <image class="add-icon" src="/images/add.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="dish-item">
+                <view class="dish-item-m">
+                    <view>
+                        <image class="dish-img" src="/images/dish-img.jpg" mode="scaleToFill"></image>
+                    </view>
+                    <text class="name">凉拌青笋</text>
+                    <view class="flex-wrp flex-justify">
+                        <text class="flex-item price">￥10.00</text>
+                        <view class="flex-wrp number">
+                            <image class="minus-icon" src="/images/minus.png"></image>
+                            <text class="num">1</text>
+                            <image class="add-icon" src="/images/add.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="dish-list flex">
+            <view class="dish-item">
+                <view class="no-img">
+                    <text class="name">凉拌青笋</text>
+                    <view class="flex-wrp">
+                        <text class="flex-item price">￥10.00</text>
+                        <view class="flex-wrp number">
+                            <image class="add-icon" src="/images/add.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="dish-item">
+                <view class="no-img">
+                    <text class="name">凉拌青笋</text>
+                    <view class="flex-wrp">
+                        <text class="flex-item price">￥10.00</text>
+                        <view class="flex-wrp number">
+                            <image class="add-icon" src="/images/add.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="dish-item">
+                <view class="no-img">
+                    <text class="name">凉拌青笋</text>
+                    <view class="flex-wrp">
+                        <text class="flex-item price">￥10.00</text>
+                        <view class="flex-wrp number">
+                            <image class="minus-icon" src="/images/minus.png"></image>
+                            <text class="num">12</text>
+                            <image class="add-icon" src="/images/add.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="dish-item">
+                <view class="no-img">
+                    <text class="name">凉拌青笋</text>
+                    <view class="flex-wrp">
+                        <text class="flex-item price">￥10.00</text>
+                        <view class="flex-wrp number">
+                            <image class="add-icon" src="/images/add.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="dish-item">
+                <view class="no-img">
+                    <text class="name">凉拌青笋</text>
+                    <view class="flex-wrp">
+                        <text class="flex-item price">￥10.00</text>
+                        <view class="flex-wrp number">
+                            <image class="minus-icon" src="/images/minus.png"></image>
+                            <text class="num">1</text>
+                            <image class="add-icon" src="/images/add.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="dish-item">
+                <view class="no-img">
+                    <text class="name">凉拌青笋</text>
+                    <view class="flex-wrp">
+                        <text class="flex-item price">￥10.00</text>
+                        <view class="flex-wrp number">
+                            <image class="minus-icon" src="/images/minus.png"></image>
+                            <text class="num">12</text>
+                            <image class="add-icon" src="/images/add.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+
+<!--<import src="../Template/footer/footer" />
+<template is="footer"></template>-->
