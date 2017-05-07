@@ -1,0 +1,130 @@
+/**我的页面**/
+.my-info{
+  width: 100%;
+  height: 194rpx;
+  position: relative;
+}
+.my-info>image{
+  width: 100%;
+  height: 100%;
+}
+.info{
+  width: 100%;
+  position: absolute;
+  top: 34rpx;
+  color: #fff;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+.info .user-text{
+  margin-left: 30rpx;
+}
+.info .user-text .title{
+  font-size: 30rpx;
+  margin-top: 26rpx;
+  margin-bottom: 6rpx;
+  font-weight: bold;
+}
+.burse{
+  margin-top: 26rpx;
+  text-align: center;
+}
+.burse .balance{
+  margin-bottom: 6rpx;
+  font-weight: bold;
+}
+
+.coupon-num{
+  color: #f2582a;
+}
+.coupon-num::after{
+  content: "\e612";
+  font-family: "iconfont";
+}
+.coupon-item{
+  width: 100%;
+  height: 130rpx;
+  padding:30rpx 0;
+  background-color: #fff;
+  border-radius: 6px;
+  position: relative;
+}
+.coupon-money{
+    background-color: #f2582a;
+    width: 200rpx;
+    height: 130rpx;
+    line-height: 130rpx;
+    color: #fff;
+    text-align: center;
+    margin-right: 30rpx;
+    position: relative;
+}
+.coupon-money image{
+    height: 130rpx;
+    width: 6rpx;
+    position: absolute;
+}
+.coupon-money .coupon-l{
+    left: 0;
+}
+.coupon-money .coupon-r{
+    right: 0;
+    transform:rotate(180deg);
+    -ms-transform:rotate(180deg); 	/* IE 9 */
+    -moz-transform:rotate(180deg); 	/* Firefox */
+    -webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+    -o-transform:rotate(180deg); 	/* Opera */
+}
+.coupon-money .rmb{
+    font-size: 40rpx;
+    padding-right: 10rpx;
+}
+.coupon-money .je{
+    font-size: 80rpx;
+}
+.coupon-text{
+    margin-top: 16rpx;
+}
+.coupon-day{
+  color: #aaaaaa;
+}
+.gastro-item{
+  height: 130rpx;
+  border-left: 2rpx solid #f8f8f8;
+  padding-left:50rpx; 
+  margin-left: 16rpx;
+  padding-bottom: 30rpx;
+  position: relative;
+}
+.store-head{
+  width: 130rpx;
+  height: 130rpx;
+  padding-right: 30rpx;
+}
+.store-head image{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.gastro-text{
+  padding-top: 30rpx;
+}
+.gastro-text .title{
+  font-size: 28rpx;
+}
+.gastro-text .content{
+  font-size: 24rpx;
+  color: #0fb28f;
+}
+.day{
+  width: 44rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  border-radius: 50%;
+  background-color: #ff5b63;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top:44rpx;
+  left: -22rpx;
+}

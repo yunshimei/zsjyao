@@ -6,7 +6,7 @@
       margin: 0;
       padding: 0;
       color: #333333;
-      font-size: 24rpx;
+      font-size: 28rpx;
       box-sizing: border-box;
 }
 Page{
@@ -20,7 +20,7 @@ Page{
   color:#f2582a;
 }
 /**上边框**/
-.border-befor::before,.border-after::after{
+.border-befor:before,.border-after:after{
     content: " ";
     position: absolute;
     left: 0;
@@ -34,7 +34,7 @@ Page{
     transform: scaleY(0.5);
     z-index: 2;
 }
-.border-befor::before{
+.border-befor:before{
   top: 0;
 }
 .border-after::after{
@@ -73,6 +73,9 @@ Page{
 .box{
   background-color: #fff;
   margin-bottom: 30rpx;
+}
+.pt-30{
+  padding-top: 30rpx;
 }
 
 /**字体图标**/
@@ -183,7 +186,9 @@ Page{
   right: 0;
   z-index: 100;
   overflow-x: hidden;
-  
+}
+.dish-box{
+  white-space:nowrap;
 }
 .dish-class .item{
   padding: 0 20rpx 18rpx 20rpx;
@@ -200,34 +205,29 @@ Page{
   top: 430rpx;
   left: 0;
   right: 0;
-  
-  background-color: #fff;
   padding-bottom: 15px;
 }
 .dish-list{
-  padding-left: 30rpx;
+  padding: 15rpx;
+  background-color: #fff;
 }
 .dish-item{
   width: 33.33%;
-  margin-top: 30rpx;
+  padding: 15rpx;
+  box-sizing: border-box;
 }
-.dish-item-m{
-  padding-right: 38rpx;
-}
+
 .dish-item .dish-img{
-  width: 200rpx;
-  max-height: 200rpx;
+  width: 100%;
+  max-height: 210rpx;
   border-radius: 10rpx;
   margin-bottom: 10rpx;
   font-size: 0;
 }
-.dish-item .name{
-  font-size: 26rpx;
-}
 .dish-item .price{
-  font-size: 22rpx;
-  padding-top: 10rpx;
+  font-size: 26rpx;
   text-align: left;
+  color: #f2582a;
 }
 .number{
   text-align: right;
@@ -247,10 +247,12 @@ Page{
   height: 80rpx;
 }
 .dish-item .no-img{
-  width: 200rpx;
+  width: 100%;
   border-radius: 10rpx;
   padding-top: 16rpx;
   box-sizing: border-box;
+  background-color: #eaf5db;
+  padding: 16rpx 6rpx;
 }
 
 /**广告横幅banner**/
@@ -311,7 +313,6 @@ Page{
 
 /**成员列表**/
 .list-continer{
-  padding-top: 30rpx;
   padding-left: 30rpx;
   padding-right: 30rpx;
 }
@@ -326,110 +327,6 @@ Page{
   border-radius: 50%;
 }
 
-/**我的页面**/
-.my-info{
-  width: 100%;
-  height: 194rpx;
-  position: relative;
-}
-.my-info>image{
-  width: 100%;
-  height: 100%;
-}
-.info{
-  width: 100%;
-  position: absolute;
-  top: 34rpx;
-  color: #fff;
-  padding: 0 30rpx;
-  box-sizing: border-box;
-}
-.info .user-text{
-  margin-left: 30rpx;
-}
-.info .user-text .title{
-  font-size: 30rpx;
-  margin-top: 26rpx;
-  margin-bottom: 6rpx;
-  font-weight: bold;
-}
-.burse{
-  margin-top: 26rpx;
-  text-align: center;
-}
-.burse .balance{
-  margin-bottom: 6rpx;
-  font-weight: bold;
-}
-.coupon-num{
-  color: #f2582a;
-}
-.coupon-num::after{
-  content: "\e612";
-  font-family: "iconfont";
-}
-.coupon-box{
-  background-color: #f8f8f8;
-}
-.coupon-item{
-  padding:30rpx;
-  border: 1px solid #f8f8f8;
-  background-color: #fff;
-  border-radius: 6px;
-}
-.coupon-day{
-  border-top: 1px dotted #f8f8f8;
-  padding-top: 30rpx;
-  margin-top: 30rpx;
-  color: #666666;
-}
-.coupon-item image{
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 50%;
-  margin-right: 30rpx;
-}
-.gastro-item{
-  height: 130rpx;
-  border-left: 2rpx solid #f8f8f8;
-  padding-left:50rpx; 
-  margin-left: 16rpx;
-  padding-bottom: 30rpx;
-  position: relative;
-}
-.store-head{
-  width: 130rpx;
-  height: 130rpx;
-  padding-right: 30rpx;
-}
-.store-head image{
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
-.gastro-text{
-  padding-top: 26rpx;
-}
-.gastro-text .title{
-  font-size: 28rpx;
-}
-.gastro-text .content{
-  font-size: 24rpx;
-  color: #0fb28f;
-  margin-top: 10rpx;
-}
-.day{
-  width: 44rpx;
-  height: 44rpx;
-  line-height: 44rpx;
-  border-radius: 50%;
-  background-color: #ff5b63;
-  color: #fff;
-  text-align: center;
-  position: absolute;
-  top:44rpx;
-  left: -22rpx;
-}
 
  
 

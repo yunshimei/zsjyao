@@ -21,21 +21,40 @@
             </view>
         </view>
         <view class="list-continer coupon-box">
-            <view class="">
-                <view class="coupon-item">
-                    <view class="flex-wrp coupon-info">
-                        <view>
-                            <image  mode="scaleToFill" src="/images/member-img.jpg"></image>
+            <view class="coupon-item">
+                <view class="flex-wrp coupon-info  border-after">
+                        <view class="coupon-money">
+                            <image class="coupon-l" src="/images/coupon.png"></image>
+                            <text class="rmb">¥</text>
+                            <text class="je">80</text>
+                            <image class="coupon-r" src="/images/coupon.png"></image>
                         </view>
-                        <view class="flex-item">
+                        <view class="flex-item coupon-text">
                             <view><text>江月楼</text></view>
-                            <view><text>10元代金券</text></view>
+                            <view><text>店内满300元可用</text></view>
+                            <view class="coupon-day">
+                                <text>2017.05.05~2017.06.06</text>
+                            </view>
+                        </view>
+                </view>
+            </view>
+            <view class="coupon-item">
+                    <view class="flex-wrp coupon-info">
+                        <view class="coupon-money">
+                            <image class="coupon-l" src="/images/coupon.png"></image>
+                            <text class="rmb">¥</text>
+                            <text class="je">80</text>
+                            <image class="coupon-r" src="/images/coupon.png"></image>
+                        </view>
+                        <view class="flex-item coupon-text">
+                            <view><text>江月楼</text></view>
+                            <view><text>店内满300元可用</text></view>
+                            <view class="coupon-day">
+                                <text>2017.05.05~2017.06.06</text>
+                            </view>
                         </view>
                     </view>
-                    <view class="coupon-day">
-                        <text>2017.05.05-2017.06.06</text>
-                    </view>
-                </view>
+                    
             </view>
         </view>
     </view>
@@ -47,34 +66,36 @@
             </view>
         </view>
         <view  class="list-continer">
-            <view class="gastro-item flex-wrp">
-                <view class="day">13</view>
-                <view class="store-head">
-                    <image src="/images/member-img.jpg"></image>
+            <view class="pt-30">
+                <view class="gastro-item flex-wrp">
+                    <view class="day">13</view>
+                    <view class="store-head">
+                        <image src="/images/member-img.jpg"></image>
+                    </view>
+                    <view class="flex-item gastro-text">
+                        <view class="title">第一次大餐鸳鸯楼</view>
+                        <view class="content">6/13，消费538吃货之路开始</view>
+                    </view>
                 </view>
-                <view class="flex-item gastro-text">
-                    <view class="title">第一次大餐鸳鸯楼</view>
-                    <view class="content">6/13，消费538吃货之路开始</view>
+                <view class="gastro-item flex-wrp">
+                    <view class="day">13</view>
+                    <view class="store-head">
+                        <image src="/images/member-img.jpg"></image>
+                    </view>
+                    <view class="flex-item gastro-text">
+                        <view class="title">第一次大餐鸳鸯楼</view>
+                        <view class="content">6/13，消费538吃货之路开始</view>
+                    </view>
                 </view>
-            </view>
-            <view class="gastro-item flex-wrp">
-                <view class="day">13</view>
-                <view class="store-head">
-                    <image src="/images/member-img.jpg"></image>
-                </view>
-                <view class="flex-item gastro-text">
-                    <view class="title">第一次大餐鸳鸯楼</view>
-                    <view class="content">6/13，消费538吃货之路开始</view>
-                </view>
-            </view>
-            <view class="gastro-item flex-wrp">
-                <view class="day">13</view>
-                <view class="store-head">
-                    <image src="/images/member-img.jpg"></image>
-                </view>
-                <view class="flex-item gastro-text">
-                    <view class="title">第一次大餐鸳鸯楼</view>
-                    <view class="content">6/13，消费538吃货之路开始</view>
+                <view class="gastro-item flex-wrp">
+                    <view class="day">13</view>
+                    <view class="store-head">
+                        <image src="/images/member-img.jpg"></image>
+                    </view>
+                    <view class="flex-item gastro-text">
+                        <view class="title">第一次大餐鸳鸯楼</view>
+                        <view class="content">6/13，消费538吃货之路开始</view>
+                    </view>
                 </view>
             </view>
         </view>
