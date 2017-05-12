@@ -1,6 +1,6 @@
 { 
   "pages":[
-    "pages/register/register",
+    "pages/entrance/entrance",
     "pages/client-menu/client-menu",
     "pages/client-sel/client-sel",
     "pages/client-my/client-my",
@@ -20,7 +20,7 @@
     "pages/add-dish/add-dish",
     "pages/modify-dish/modify-dish",
     "pages/sel-detail/sel-detail",
-    "pages/entrance/entrance"
+    "pages/register/register"
   ],
   "window":{
     "backgroundTextStyle":"light",

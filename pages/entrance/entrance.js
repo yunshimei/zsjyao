@@ -23,9 +23,19 @@ Page({
       })
     })
   },
+
+  //点击商家入驻进入商家注册页面
   toRegister:function(){
     wx.navigateTo({
       url: '/pages/register/register'
+    })
+  },
+  //点击扫码点餐打开扫一扫界面
+  scanOrder:function(){
+    wx.scanCode({
+      success: (res) => {
+        console.log(res)
+      }
     })
   }
 })

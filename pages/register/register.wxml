@@ -3,11 +3,11 @@
     <view class="input-area">
         <view class="input-item flex-wrp">
             <text class="tip-text">城市</text>
-            <input class="border-after flex-item" placeholder="选择" value="" focus="{{focus}}" bindfocus="open" />
+            <input class="border-after flex-item" placeholder="请选择" value="{{finishValue}}" focus="{{focus}}" bindfocus="open" />
         </view>
         <view class="input-item flex-wrp">
             <text class="tip-text">手机</text>
-            <input class="border-after flex-item"  bindblur="phoneFinish" type="number" placeholder="手机号码" />
+            <input class="border-after flex-item"  bindblur="phoneFinish" type="number" placeholder="手机号码" confirm-type="done" placeholder-style="font-size:13px;" />
         </view>
         <view class="input-item flex-wrp">
             <text class="tip-text">验证码</text>
@@ -24,7 +24,7 @@
     </view>
 </view>
 
-<view wx:if="{{condition}}" class="citypicker">
+<!--<view wx:if="{{condition}}" class="citypicker">
   <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
     <view class="cityheader">
       <view bindtap="open" class="city-cancel">取消</view>
@@ -38,6 +38,24 @@
     </picker-view-column>
     <picker-view-column>
       <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>-->
+<view wx:if="{{condition}}" class="citypicker">
+  <view>{{year}}年{{month}}月{{day}}日</view>
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+    <view class="cityheader">
+      <view bindtap="open" class="city-cancel">取消</view>
+      <view bindtap="open" class="city-true">确定</view>
+    </view>
+    <picker-view-column>
+      <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;background-color:#fff;text-align:center">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;background-color:#fff;text-align:center">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;background-color:#fff;text-align:center">{{item}}</view>
     </picker-view-column>
   </picker-view>
 </view>

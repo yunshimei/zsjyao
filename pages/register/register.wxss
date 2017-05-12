@@ -1,4 +1,4 @@
-.input {
+/**.input {
   padding-top: 300rpx;
   width: 100%;
 }
@@ -74,10 +74,5 @@
   border-bottom: 1px #d9d9d9 solid;
   border-top: 1px #d9d9d9 solid;
   padding: 20rpx;
-}
+}**/
 
-/**错误提示**/
-.erro-init{
-  color: #f2582a;
-  padding: 15px 15px 0 15px;
-}
