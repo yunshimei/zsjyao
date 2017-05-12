@@ -1,0 +1,41 @@
+.footer{
+    height: 100rpx;
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction:row;
+    font-size: 22rpx;
+    color: #9d9d9d;
+}
+.footer .menu,.footer .sel,.footer .my{
+    text-align: center;
+    padding-top: 12rpx;
+}
+.footer .menu::before,.footer .sel::before,.footer .my::before{
+    font-family: "iconfont";
+    display: block;
+    font-size: 40rpx;
+}
+.footer .menu::before{
+    content: '\e624';
+}
+.footer .sel::before{
+    content: '\e66c';
+}
+.footer .my::before{
+    content: '\e66e';
+}
+.footer .active.menu::before{
+    content: '\e616';
+}
+.footer .active.sel::before{
+    content: '\e64f';
+}
+.footer .active.my::before{
+    content: '\e61b';
+}
+.footer .active{
+    color: #f2582a;
+}

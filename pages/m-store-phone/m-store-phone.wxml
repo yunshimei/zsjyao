@@ -1,0 +1,20 @@
+<view class="body">
+    <view class="input-area">
+        <view class="input-item flex-wrp">
+            <text class="tip-text">手机</text>
+            <input class="border-after flex-item" type="number" placeholder="手机号码" auto-focus/>
+        </view>
+        <view class="input-item flex-wrp">
+            <text class="tip-text">身份证</text>
+            <input class="border-after flex-item" type="number" placeholder="身份证后六位"/>
+        </view>
+        <view class="input-item flex-wrp">
+            <text class="tip-text">验证码</text>
+            <input class="border-after flex-item" type="number" placeholder="输入验证码"/>
+            <view class="focus-code">点击获取验证码</view>
+        </view>
+    </view>
+    <view class="btn-area">
+        <button style="background-color:#f2582a;color:#fff;" type="primary"> 提交 </button>
+    </view>
+</view>

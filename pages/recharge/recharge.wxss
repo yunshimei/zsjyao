@@ -1,0 +1,37 @@
+.re-head{
+    width: 100%;
+    padding: 30px 0;
+    background-color: #f2582a;
+    color: #fff;
+    text-align: center;
+}
+.re-head .rmb{
+    font-weight: bold;
+}
+.re-head .fwf-balance{
+    font-size: 25px;
+    font-weight: bold;
+}
+.re-bd{
+    background: #fff;
+    padding-bottom: 15px;
+}
+.re-bd .re-item{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ec8668;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    color: #f2582a;
+}
+.re-item .re-je{
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0 5px;
+}
+.re-item .re-tip{
+    font-size: 12px;
+    color: #ec9176;
+}

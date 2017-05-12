@@ -1,0 +1,39 @@
+<view class="body">
+    <view class="modify">
+        <view class="modify-item flex-wrp">
+            <view class="flex-item tip skin">招牌</view>
+            <view class="r-arrow">无</view>
+        </view>
+        <view class="modify-item flex-wrp" bindtap="modiName">
+            <view class="flex-item tip store-name">店名</view>
+            <view class="r-arrow">老码头火锅(红牌楼店)</view>
+        </view>
+        <view class="modify-item flex-wrp" bindtap="modiAddr">
+            <view class="flex-item tip store-addr">地址</view>
+            <view class="r-arrow">武侯人民南路</view>
+        </view>
+        <view class="modify-item flex-wrp" bindtap="modiPhone">
+            <view class="flex-item tip store-phone">电话</view>
+            <view class="r-arrow">15896324856</view>
+        </view>
+        <view class="modify-item flex-wrp" bindtap="modiAuthen">
+            <view class="flex-item tip store-authen">实名认证</view>
+            <view class="r-arrow">未认证</view>
+        </view>
+        <view class="modify-item flex-wrp" bindtap="modiCoupon">
+            <view class="flex-item tip store-coupon">发布优惠券</view>
+            <view class="r-arrow"></view>
+        </view>
+        <view class="modify-item flex-wrp">
+            <view class="flex-item tip store-cash" bindtap="modiCash">提现</view>
+            <view class="r-arrow">账户余额￥3500.00</view>
+        </view>
+        <view class="modify-item flex-wrp">
+            <view class="flex-item tip store-blacklist" bindtap="modiBlacklist">黑名单</view>
+            <view class="r-arrow">0人</view>
+        </view>
+    </view>
+    <view class="customer">
+        咨询客服 0756-4526879
+    </view>
+</view>

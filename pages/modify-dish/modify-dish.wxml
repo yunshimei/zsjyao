@@ -1,0 +1,60 @@
+<!--pages/modify-dish/modify-dish.wxml-->
+<scroll-view class="body">
+    <view class="catalog">
+        <view class="border-after">*基本信息</view>
+    </view>
+    <view class="input-area">
+        <view class="input-item flex-wrp">
+            <text class="tip-text">品名</text>
+            <input class="border-after flex-item" type="number" placeholder="菜品名称" auto-focus/>
+        </view>
+        <view class="input-item flex-wrp">
+            <text class="tip-text">类别</text>
+            <!--<input class="border-after flex-item" type="number" placeholder="选择类别"/>-->
+            <view class="section border-after flex-item">
+                <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                    <view class="picker">
+                        {{array[index]}}
+                    </view>
+                </picker>
+            </view>
+            <view class="focus-code">添加类别</view>
+        </view>
+        <view class="input-item flex-wrp">
+            <text class="tip-text">单价</text>
+            <input class="border-after flex-item" type="number" placeholder="菜品单价" auto-focus/>
+        </view>
+    </view>
+    <view class="catalog">
+        <view class="border-after">*添加图片</view>
+    </view>
+    <view class="upload-img">
+        <image class="add-dish-img" src="/images/dish-img-01.jpg"></image>
+        <view class="tip">提示：图片大小至少2000*2000</view>
+    </view>
+    <view class="dish-show">
+        <view class="show-item">
+            <view class=" flex-wrp border-after">
+                <view class="flex-item">是否隐藏</view>
+                <view class="all-chose">
+                    <label class="radio">
+                        <radio class="radio-size" value="" checked="" color="#f2582a"/>
+                    </label>
+                </view>
+            </view>
+        </view>
+        <view class="show-item">
+            <view class=" flex-wrp">
+                <view class="flex-item">是否隐藏</view>
+                <view class="all-chose">
+                    <label class="radio">
+                        <radio class="radio-size" value="" checked="" color="#f2582a"/>
+                    </label>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="btn-area">
+        <button style="background-color:#f2582a;color:#fff;" type="primary"> 保存 </button>
+    </view>
+</scroll-view>

@@ -1,0 +1,15 @@
+/* pages/modify-dish/modify-dish.wxss */
+.dish-show{
+    margin-top: 15px;
+}
+.dish-show .show-item{
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+    background-color: #fff;
+    position: relative;
+
+}
+.dish-show .all-chose{
+    padding: 0;
+}

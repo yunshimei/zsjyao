@@ -1,0 +1,94 @@
+<view class="body">
+    <view class="store-head" bindtap="toModify">
+        <view class="flex-wrp">
+            <image class="store-img" src="/images/member-img.jpg"></image>
+            <view class="flex-item store-info">
+                <view><text class="store-name">老码头火锅(红牌楼店)</text></view>
+                <view><text class="store-account">账号15389658569</text></view>
+            </view>
+            <view class="authen r-arrow">未认证</view>
+        </view>
+    </view>
+    <view class="store-control flex-wrp">
+        <view class="flex-item" bindtap="toStaffManage">
+            <image src="/images/yg.png"></image>
+            <view>员工二维码</view>
+        </view>
+        <view class="flex-item" bindtap="toTableCode">
+            <image src="/images/cz.png"></image>
+            <view>餐桌二维码</view>
+        </view>
+        <view class="flex-item" bindtap="toRecharge">
+            <image src="/images/chz.png"></image>
+            <view>充值</view>
+        </view>
+    </view>
+    <view class="store-control flex-wrp">
+        <view class="flex-item">
+            <view><span class="jrsy">0</span>元</view>
+            <view><text class="title">今日收银</text></view>
+        </view>
+        <view class="flex-item">
+            <view><span class="zhye">0</span>元</view>
+            <view><text class="title">账户余额</text></view>
+        </view>
+        <view class="flex-item">
+            <view><span class="fwfye">0</span>元</view>
+            <view><text class="title">服务费余额</text></view>
+        </view>
+    </view>
+    <view class="sz-info">
+        <view class="switch-bar">
+            <view class="flex-wrp border-after">
+                <view class="flex-item active">收支明细</view>
+                <view class="flex-item">历史收支</view>
+            </view>
+        </view>
+        <view class="sz-bd" style="display:none">
+            <view class="title">
+                <view class=" flex-wrp border-after">
+                    <view class="col1 flex-item">月份</view>
+                    <view class="col2 flex-item">收入(元)</view>
+                    <view class="col3 flex-item">支出(元)</view>
+                </view>
+            </view>
+            <view class="row">
+                <view class=" flex-wrp border-after">
+                    <view class="col1 flex-item">六月份</view>
+                    <view class="col2 flex-item red-text">+385.00</view>
+                    <view class="col3 flex-item">00.00</view>
+                </view>
+            </view>
+            <view class="row">
+                <view class=" flex-wrp border-after">
+                    <view class="col1 flex-item">六月份</view>
+                    <view class="col2 flex-item red-text">+385.00</view>
+                    <view class="col3 flex-item">00.00</view>
+                </view>
+            </view>
+        </view>
+        <view class="sz-bd">
+            <view class="title">
+                <view class=" flex-wrp border-after">
+                    <view class="col1 flex-item">项目</view>
+                    <view class="col2">收支</view>
+                    <view class="col3 flex-item">时间</view>
+                </view>
+            </view>
+            <view class="row">
+                <view class=" flex-wrp border-after">
+                    <view class="col1 flex-item">7号桌</view>
+                    <view class="col2 red-text">+385.00</view>
+                    <view class="col3 flex-item data">2017.05.03 13:00:00</view>
+                </view>
+            </view>
+            <view class="row">
+                <view class=" flex-wrp border-after">
+                    <view class="col1 flex-item">提现</view>
+                    <view class="col2 green-text">-385.00</view>
+                    <view class="col3 flex-item data">2017.05.03 13:00:00</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

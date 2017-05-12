@@ -1,0 +1,36 @@
+.notice-bar{
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 100px;
+    padding: 0 15px;
+    box-sizing:border-box;
+}
+.notice-bar .notice::before{
+    content: "\e627";
+    font-family: "iconfont";
+}
+.dt-box{
+    position: absolute;
+    top:155px;
+}
+.dt-box .dt-dish{
+    width: 100%;
+}
+.dt-box .item{
+    width: 33.33%;
+    text-align: center;
+    padding-right: 8px;
+    box-sizing: border-box;
+}
+.dt-box .default-btn{
+    margin-bottom: 15px;
+}
+.dt-dish .default-btn{
+    padding: 7px 0;
+    white-space:nowrap; 
+    overflow:hidden; 
+    text-overflow:ellipsis;
+}

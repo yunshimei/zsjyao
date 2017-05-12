@@ -1,0 +1,42 @@
+<scroll-view scroll-y="true" class="body">
+    <view class="re-head">
+        <view>
+            <text class="rmb">￥</text>
+            <text class="fwf-balance">6000.00</text>
+        </view>
+        <view><text>服务费余额</text></view>
+    </view>
+    <view class="re-bd">
+        <view class="box">
+            <view class="list-title  border-after">
+                <view class="main flex-wrp flex-justify">
+                    <view class="flex-item">充值</view>
+                </view>
+            </view>
+        </view>
+        <view class="list-continer">
+            <view class="re-item">
+                <text>充值<text class="re-je">2000</text>元 <text class="re-tip">月基本费6元/桌，1.2元/次/桌</text></text>
+            </view>
+            <view class="re-item">
+                <text>充值<text class="re-je">2000</text>元 <text class="re-tip">月基本费6元/桌，1.2元/次/桌</text></text>
+            </view>
+            <view class="re-item">
+                <text>充值<text class="re-je">2000</text>元 <text class="re-tip">月基本费6元/桌，1.2元/次/桌</text></text>
+            </view>
+            <view class="re-item">
+                <text>充值<text class="re-je">2000</text>元 <text class="re-tip">月基本费6元/桌，1.2元/次/桌</text></text>
+            </view>
+            <view class="re-item">
+                <text>充值<text class="re-je">2000</text>元 <text class="re-tip">月基本费6元/桌，1.2元/次/桌</text></text>
+            </view>
+            <view class="re-item">
+                <text>充值<text class="re-je">2000</text>元 <text class="re-tip">月基本费6元/桌，1.2元/次/桌</text></text>
+            </view>
+        </view>
+        <view class="btn-area">
+            <button style="background-color:#f2582a;color:#fff;" type="primary"> 充值 </button>
+            <view class="tip">提示：点击充值即表示同意<text>《充值协议》</text>协议</view>
+        </view>
+    </view>
+</scroll-view>

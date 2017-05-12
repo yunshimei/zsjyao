@@ -1,0 +1,7 @@
+<template name="footer">
+    <view class="footer flex-wrp border-befor">
+        <view class="flex-item menu active">菜单</view>
+        <view class="flex-item sel">已点</view>
+        <view class="flex-item my">我的</view>
+    </view>
+</template> 

@@ -1,0 +1,39 @@
+<scroll-view scroll-y="true" class="body">
+  <view class="banner">
+    <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" autoplay="{{autoplay}}" circular="{{circular}}">
+         <block wx:for="{{imgUrls}}">
+            <swiper-item>
+                <image class="banner-img" src="{{item}}" />
+            </swiper-item>
+        </block>
+    </swiper>
+  </view>
+  <view class="desk-num">
+    <text>5号餐桌</text>
+  </view>
+  <view class="box">
+    <view class="list-title  border-after">
+        <view class="main flex-wrp flex-justify">
+            <view class="flex-item"><span>7</span>号桌以点</view>
+        </view>
+    </view>
+    <view class="list-continer">
+        <view class="sel-detail">
+            <view class="flex-wrp sel-item">
+                <view class="flex-item">老鸭鸳鸯锅</view>
+                <view>￥38</view>
+                <view>x1</view>
+            </view>
+            <view class="flex-wrp sel-item">
+                <view class="flex-item">老鸭鸳鸯锅</view>
+                <view>￥38</view>
+                <view>x1</view>
+            </view>
+        </view>
+        <view class="detail-total">
+            <view>就餐人数12人</view>
+            <view>共4件菜品<text class="d-total">￥68</text></view>
+        </view>
+    </view>
+  </view>
+</scroll-view>

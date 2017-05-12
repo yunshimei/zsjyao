@@ -1,0 +1,6 @@
+<view class="body">
+    <image style="width:100%;height:100%;display:block;" src="/images/entr-bg.jpg"></image>
+    <image class="wx-hd" src="/images/member-img.jpg"></image>
+    <view class="enter-btn" bindtap="toRegister">商家入驻</view>
+    <view class="sm-dc">扫码点餐</view>
+</view>

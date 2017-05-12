@@ -1,0 +1,54 @@
+/**client-menu.wxss**/
+.sel-list{
+  height: auto;
+  background-color: #f8f8f8;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.store-menu{
+  width: 100%;
+}
+.store-menu .dish-class{
+  top:0;
+}
+.add-dish{
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 39px;
+  padding: 0 15px;
+  border-left: 1px solid #f8f8f8;
+  line-height: 39px;
+  background-color: #fff;
+  color: #f2582a;
+  z-index: 300;
+  font-size: 13px;
+}
+.store-menu .dish-main{
+  top:40px;
+  bottom:0;
+}
+.store-menu .dish-item{
+  text-align: center;
+}
+
+.store-menu .dish-img-box{
+  position: relative;
+}
+.store-price{
+  padding: 2px 8px;
+  background-color: #e92400;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}

@@ -1,0 +1,63 @@
+{ 
+  "pages":[
+    "pages/register/register",
+    "pages/client-menu/client-menu",
+    "pages/client-sel/client-sel",
+    "pages/client-my/client-my",
+    "pages/store-dt/store-dt",
+    "pages/store-center/store-center",
+    "pages/store-modify/store-modify",
+    "pages/m-store-name/m-store-name",
+    "pages/m-store-addr/m-store-addr",
+    "pages/m-store-phone/m-store-phone",
+    "pages/m-store-authen/m-store-authen",
+    "pages/m-store-coupon/m-store-coupon",
+    "pages/m-store-cash/m-store-cash",
+    "pages/m-store-blacklist/m-store-blacklist",
+    "pages/staff-manage/staff-manage",
+    "pages/table-code/table-code",
+    "pages/recharge/recharge",
+    "pages/add-dish/add-dish",
+    "pages/modify-dish/modify-dish",
+    "pages/sel-detail/sel-detail",
+    "pages/entrance/entrance"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#3a3b3e",
+    "navigationBarTitleText": "菜单",
+    "navigationBarTextStyle":"light",
+    "backgroundColor": "#eeeeee"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/client-menu/client-menu",
+      "text": "菜单",
+      "iconPath":"/images/menu.png",
+      "selectedIconPath":"/images/menu-sel.png"
+    }, {
+      "pagePath": "pages/client-sel/client-sel",
+      "text": "已点",
+      "iconPath":"/images/order.png",
+      "selectedIconPath":"/images/order-sel.png"
+    }, {
+      "pagePath": "pages/client-my/client-my",
+      "text": "我的",
+      "iconPath":"/images/my.png",
+      "selectedIconPath":"/images/my-sel.png"
+    }, {
+      "pagePath": "pages/store-dt/store-dt",
+      "text": "大堂",
+      "iconPath":"/images/my.png",
+      "selectedIconPath":"/images/my-sel.png"
+    }, {
+      "pagePath": "pages/store-center/store-center",
+      "text": "店铺中心",
+      "iconPath":"/images/my.png",
+      "selectedIconPath":"/images/my-sel.png"
+    }],
+    "color":"#666666",
+    "selectedColor":"#f2582a",
+    "backgroundColor":"#fff"
+  }
+}

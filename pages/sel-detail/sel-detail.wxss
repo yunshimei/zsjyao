@@ -1,0 +1,21 @@
+/* pages/sel-detail/sel-detail.wxss */
+.sel-detail{
+    padding: 8px 0;
+}
+.sel-detail .sel-item{
+    padding: 7px 0;
+}
+.sel-item view{
+    padding-left: 15px;
+}
+.detail-total{
+    text-align: right;
+    padding: 15px 0;
+}
+.detail-total .d-total{
+    font-size: 17px;
+    font-weight: bold;
+}
+.detail-total>view{
+    padding-bottom: 5px;
+}

@@ -1,0 +1,28 @@
+<scroll-view scroll-y="true" class="body">
+    <view class="cash-box">
+        <view class="input-area">
+            <view class="input-item flex-wrp">
+                <text class="tip-text">金额</text>
+                    <input class="border-after flex-item" type="text" placeholder="请输入提现金额" auto-focus/>
+            </view>
+            <view class="balance">*可提现余额6500.00元</view>
+        </view>
+    </view>
+    <view class="cash-box">
+        <view class="input-area">
+            <view class="input-item flex-wrp">
+                <text class="tip-text">手机</text>
+                <text class="border-after flex-item">158****7895</text>
+            </view>
+            <view class="input-item flex-wrp">
+                <text class="tip-text">验证码</text>
+                <input class="border-after flex-item" type="number" placeholder="输入验证码"/>
+                <view class="focus-code">点击获取验证码</view>
+            </view>
+        </view>
+    </view>
+    <view class="cash-tip">提现到微信账户</view>
+    <view class="btn-area">
+        <button style="background-color:#f2582a;color:#fff;" type="primary"> 提交 </button>
+    </view>
+</scroll-view>

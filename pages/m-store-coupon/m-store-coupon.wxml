@@ -1,0 +1,96 @@
+<scroll-view scroll-y="true" class="body">
+    <view class="switch-bar">
+        <view class="flex-wrp border-after">
+            <view class="flex-item active">发布优惠券</view>
+            <view class="flex-item">有效优惠券</view>
+        </view>
+    </view>
+    <view class="release">
+        <view class="box">
+            <view class="list-title  border-after">
+                <view class="main flex-wrp flex-justify">
+                    <view class="flex-item">优惠券方式</view>
+                </view>
+            </view>
+            <view class="list-continer">
+                <view class="flex-wrp coupon-style">
+                    <view class="flex-item">
+                        <label class="radio">
+                            <radio class="radio-size" value="" checked="" color="#f2582a"/>消费后送券
+                        </label>
+                    </view>
+                    <view class="flex-item">
+                        <label class="radio">
+                            <radio class="radio-size" value="" checked="" color="#f2582a"/>消费前送券
+                        </label>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="set-coupon">
+        <view class="box">
+            <view class="list-title  border-after">
+                <view class="main flex-wrp flex-justify">
+                    <view class="flex-item">设置优惠券</view>
+                </view>
+            </view>
+            <view class="list-continer">
+                <view class="set-coupon-bd">
+                     <view class="input-area">
+                        <view class="input-item flex-wrp">
+                            <text class="tip-text">消费金额</text>
+                            <input class="border-after flex-item" type="number" placeholder="输入金额" auto-focus/>
+                            <text class="tip-text  flex-item">元</text>
+                        </view>
+                        <view class="input-item flex-wrp">
+                            <text class="tip-text">送券张数</text>
+                            <input class="border-after flex-item" type="number" placeholder="输入张数"/>
+                            <text class="tip-text  flex-item">张</text>
+                        </view>
+                        <view class="input-item flex-wrp">
+                            <text class="tip-text">单券价值</text>
+                            <input class="border-after flex-item" type="number" placeholder="输入单券价值"/>
+                            <text class="tip-text  flex-item">元</text>
+                        </view>
+                        <view class="input-item flex-wrp">
+                            <text class="tip-text">有效时间</text>
+                            <input class="border-after flex-item" type="text" placeholder="选择开始时间"/>
+                            <text class="to">到</text>
+                            <input class="border-after flex-item" type="text" placeholder="选择结束时间"/>
+                        </view>
+                    </view>   
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="set-style">
+        <view class="box">
+            <view class="list-title  border-after">
+                <view class="main flex-wrp flex-justify">
+                    <view class="flex-item">发布方式</view>
+                </view>
+            </view>
+            <view class="list-continer">
+                <view class="flex-wrp coupon-style">
+                    <view class="flex-item">
+                        <label class="radio">
+                            <radio class="radio-size" value="" checked="" color="#f2582a"/>同城发布
+                        </label>
+                    </view>
+                    <view class="flex-item">
+                        <label class="radio">
+                            <radio class="radio-size" value="" checked="" color="#f2582a"/>向老顾客发布
+                        </label>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="coupon-tip">
+        注：发布成功后自动从预存服务服中扣出手续费<text>30元</text>
+    </view>
+    <view class="btn-area">
+        <button style="background-color:#f2582a;color:#fff;" type="primary"> 提交 </button>
+    </view>
+</scroll-view>

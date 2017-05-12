@@ -1,0 +1,28 @@
+<view class="body">
+    <view class="skin-box">
+        <image class="skin-img" src="/images/skin-bg.jpg">
+            <text class="skin-text">老码头火锅红牌楼店</text>
+        </image>
+    </view>
+    <view class="notice-bar">
+        <text class="notice">10号餐桌“花花公子”刚刚完成买单360元</text>
+    </view>
+    <scroll-view scroll-y="true" class="dt-box">
+        <view class="box">
+            <view class="list-title  border-after">
+                <view class="main flex-wrp flex-justify">
+                    <view class="flex-item">1号餐桌</view>
+                    <view class="r-arrow"><text class="coupon-num">12人</text></view>
+                </view>
+            </view>
+            <view class="list-continer">
+                <view class="dt-dish pt-30 flex">
+                    <view class="item"><view class="default-btn active-btn">老鸭鸳鸯锅</view></view>
+                    <view class="item"><view class="default-btn">老鸭鸳鸯锅鸳鸯锅</view></view>
+                    <view class="item"><view class="default-btn">老鸭鸳鸯锅</view></view>
+                    <view class="item"><view class="default-btn">老鸭鸳鸯锅</view></view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>

@@ -1,0 +1,43 @@
+.table-code-title{
+    padding: 0 15px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.table-code-title .header{
+    font-size: 20px;
+    color: #f2582a;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+}
+.table-code-title .tip{
+    font-size: 12px;
+    color: #9d9d9d;
+    padding-bottom: 15px;
+}
+.table-code-title .tip text{
+    color: #3f8dbe;
+}
+
+.table-code{
+    background-color: #fff;
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+
+.code-item{
+    width: 50%;
+    margin-bottom: 20px;
+    padding: 0 7px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.code-item .code{
+    width: 155px;
+    height: 155px;
+}
+.code-item .txt{
+    padding-top: 5px;
+}

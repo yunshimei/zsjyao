@@ -1,0 +1,24 @@
+<scroll-view scroll-y="true" class="body">
+    <view class="blacklist-box">
+        <view class="blacklist-item">
+            <view class="flex-wrp border-befor">
+                <image class="head-img" src="/images/member-img.jpg"></image>
+                <view class="blacklist-text flex-item">
+                    <view class="name">萌妹纸</view>
+                    <view class="wxh">微信号：dsfsdf021</view>
+                </view>
+                <view class="blacklist-btn"><view class="default-btn active-btn">从黑名单移除</view></view>            
+            </view>
+        </view>
+        <view class="blacklist-item">
+            <view class="flex-wrp border-befor">
+                <image class="head-img" src="/images/member-img.jpg"></image>
+                <view class="blacklist-text flex-item">
+                    <view class="name">萌妹纸</view>
+                    <view class="wxh">微信号：dsfsdf021</view>
+                </view>
+                <view class="blacklist-btn"><view class="default-btn active-btn">从黑名单移除</view></view>            
+            </view>
+        </view>
+    </view>
+</scroll-view>

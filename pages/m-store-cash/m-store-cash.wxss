@@ -1,0 +1,13 @@
+
+.cash-box{
+    margin-bottom: 15px;
+}
+.cash-box .balance{
+    padding: 10px 15px;
+    color: #9d9d9d;
+}
+.cash-tip{
+    color: #9d9d9d;
+    margin-bottom: 15px;
+    padding: 0 15px;
+}

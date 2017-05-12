@@ -1,0 +1,16 @@
+<view class="body">
+    <view class="input-area">
+        <view class="input-item flex-wrp">
+            <text class="tip-text">选择地区</text>
+            <input class="border-after flex-item" type="text" placeholder="地区信息" auto-focus/>
+            <view class="location"></view>
+        </view>
+        <view class="input-item flex-wrp">
+            <text class="tip-text">详细地址</text>
+            <input class="border-after flex-item" type="text" placeholder="街道门牌信息"/>
+        </view>
+    </view>
+    <view class="btn-area">
+        <button style="background-color:#f2582a;color:#fff;" type="primary"> 提交 </button>
+    </view>
+</view>
