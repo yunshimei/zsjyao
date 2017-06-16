@@ -22,7 +22,7 @@
 }
 .totleBar{
   height: 50px;
-  line-height: 50px;
+
   background-color: #fff;
   position: absolute;
   bottom: 0;
@@ -32,6 +32,12 @@
 }
 .totleBar>view{
   height:50px;
+}
+.salePrice{
+  color: #aaa;
+}
+.totlepri{
+  padding-top: 8px;
 }
 .payBtn{
   height: 50px;

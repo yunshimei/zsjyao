@@ -27,7 +27,7 @@ Page({
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
     console.log(options);
-    app.getUserOpenId(this.isauthorize);//获取用户openid后判断角色
+    // app.getUserOpenId(this.isauthorize);//获取用户openid后判断角色
     var that = this;
     this.getStoreId(/*options.store_id*/"3");//执行获取storeId
     this.setData({status: options.status,
@@ -42,9 +42,8 @@ Page({
   },
   onShow:function(){
     // 页面显示
-    //app.getUserOpenId(this.stoteCenterData);//获取用户openid后
+    app.getUserOpenId(this.isauthorize);//获取用户openid后判断角色
     this.storeMenuData();//执行铺菜单并且请求数据函数
-    
   },
   onHide:function(){
     // 页面隐藏
@@ -152,9 +151,9 @@ Page({
     var roleStatus = wx.getStorageSync('roleStatus');
     if (roleStatus){
       if (roleStatus == 1) {
-        that.getDtData();
+        that.getDtData();//获取大堂页面数据
       } else if (roleStatus == 2) {
-        taht.getDtData();
+        taht.getDtData();//获取大堂页面数据
       } else if (roleStatus == 3) {
         wx.showModal({
           title: '提示',

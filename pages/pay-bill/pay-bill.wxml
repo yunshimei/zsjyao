@@ -95,9 +95,10 @@
 
 <view class="totleBar">
     <view class="border-befor flex-wrp">
-        <view class="flex-item">
+        <view class="flex-item totlepri">
             <text class="pay-tip">实付金额：</text>
             <text class="pay-money">￥300</text>
+            <view class="salePrice">已优惠20元</view>
         </view>
         <view class="payBtn">付款</view>
     </view>

@@ -1,8 +1,8 @@
 { 
   "pages":[
-    "pages/entrance/entrance",
-    "pages/client/client",
     
+    "pages/client/client",
+    "pages/entrance/entrance",
     
     
     "pages/store/store",
