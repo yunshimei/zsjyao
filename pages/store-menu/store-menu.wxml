@@ -1,0 +1,97 @@
+<!--pages/store-menu/store-menu.wxml-->
+<view class="body-bottom50 {{status==4?'':'hide'}}">
+    
+    <view class="store-menu">
+      
+      <view class="menu-btn flex">
+        <view class="flex-item">
+          <view class="flex-wrp tablePri">
+              <view class="flex-item BascTablePri">基本餐位费:{{bascPri}}元</view>
+              <view  class="default-btn active-btn setBasc " bindtap="setBascTablePri">{{bascPri>0?'修改':'设置'}}</view>
+          </view>
+        </view>
+        <view class="add-dish-btn"  bindtap="toAddDish"><text>添加菜品</text></view>
+      </view>
+      <view class="dish-class">
+        <view class="border-after">
+            <view class="type-bar">
+              <scroll-view scroll-x="true">
+                  <view class="dish-box">
+                      <text bindtap="dishClassHandle" data-index="{{index}}" wx:for="{{dataMenu.store_type}}" wx:key="index" class="item {{item.st_id==st_id?'active':''}}">{{item.st_name}}</text><!--active-->
+                  </view>
+              </scroll-view>
+          </view>
+        </view>
+      </view>
+      <scroll-view scroll-y="true" class="dish-main">
+        <view wx:if="{{noDishData}}">
+          <view class="dish-list flex">
+              
+              <view wx:for="{{dataMenu.goods_list.img}}" wx:key="index" class="dish-item" bindtap="toMOdifyDish" data-goodsid="{{item.goods_id}}" data-goodsName="{{item.goods_name}}" data-goodsPrice="{{item.shop_price}}" data-goodsImg="{{item.original_img}}" data-goodsTypeId="{{item.store_type_id1}}" data-ishide="{{item.is_hide}}">
+                <!--<view class="hideDishBox" wx:if="{{item.is_hide==1}}">
+                  <view class="hideDish"></view>
+                </view>-->
+                <view>
+                  <view class="dish-img-box">
+                      <image class="dish-img {{item.is_hide==1?'gray':''}}" src="https://www.zsjyao.com/{{item.original_img}}" mode="scaleToFill"></image>
+                      <view class="store-price {{item.is_hide==1?'gray-bg':''}}">
+                          ￥{{item.shop_price}}
+                      </view>
+                  </view>
+                  <view class="name {{item.is_hide==1?'gary-text':''}}">
+                      <text>{{item.goods_name}}</text>
+                  </view>
+                </view>
+              </view>
+              
+          </view>
+          <view class="dish-list flex">
+              <view class="dish-item" wx:for="{{dataMenu.goods_list.null_img}}" wx:key="index" bindtap="toMOdifyDish" data-goodsid="{{item.goods_id}}" data-goodsName="{{item.goods_name}}" data-goodsPrice="{{item.shop_price}}" data-goodsImg="{{item.original_img}}" data-goodsTypeId="{{item.store_type_id1}}"  data-ishide="{{item.is_hide}}">
+                  <!--<view class="hideDishBox" wx:if="{{item.is_hide==1}}">
+                      <view class="hideDish"></view>
+                  </view>-->
+                  <view class="no-img {{item.is_hide==1?'no-img-gray':''}}">
+                      <view class="name">
+                          <text>{{item.goods_name}}</text>
+                      </view>
+                      <view>￥{{item.shop_price}}</view>                      
+                  </view>
+              </view>
+          </view>
+        </view>
+        <view class="no-data" wx:if="{{noData}}">
+          <image src="/images/no-data.png"></image>
+          <view><text>该分类暂无菜品，请添加</text></view>  
+        </view>
+      </scroll-view>    
+    </view>
+
+</view>
+
+<view wx:if="{{isSetBacePri}}"  class="pop-box">
+    <view class="pop-main">
+        <view class="pop-title">
+            <view class="pop-title-m">
+                <text class="border-after">设置基本餐位费</text>
+            </view>
+        </view>
+        <view class="pop-bd">
+            <view class="input-item flex-wrp">
+                <text class="tip-text">餐位费</text>
+                <input class="border-after flex-item" bindinput="bacePriInput" type="number" placeholder="请输入基本餐位费" auto-focus/>
+            </view>
+        </view>
+        <view class="pop-bt flex-wrp">
+            <view bindtap="setBacePriCancel" class="cancel-btn flex-item">
+                <text>取消</text>
+            </view>
+            <view bindtap="setBacePriConfirm" class="confirm-btn flex-item">
+                <text>确认</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+
+
+

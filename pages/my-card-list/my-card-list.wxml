@@ -1,0 +1,99 @@
+<!--pages/my-card-list/my-card-list.wxml-->
+<view class="body">
+  <view class="store-head vip-haed" style="">
+        <view>
+            <view><image class="store-img" style="border-radius:50%;border:2px solid #fff" src="{{storeLogo || '/images/no-store-head.png'}}"></image></view>
+            <view class="vip-handle-hd">
+                <text>{{storeCardInfo.store.store_name}}惠员卡</text>
+            </view>
+        </view>
+  </view>
+  <view class="store_info">
+    <view class="store-addr">餐厅地址：{{storeCardInfo.store.province_id}}{{storeCardInfo.store.city_id}}{{storeCardInfo.store.district}}{{storeCardInfo.store.store_address}}</view>
+    <view class="store-phone">餐厅电话：{{storeCardInfo.store.store_phone}}</view>
+    <view class="store-person">用餐人次：28756</view>
+  </view>
+  <view class="box">
+    <!--<view class="list-title  border-after">
+        <view class="main flex-wrp">
+            <view class="flex-item">预约</view>
+            <view>5人</view>
+        </view>
+    </view>-->
+    <view class="bespoke">
+      <view wx:if="{{storeCardInfo.user_order_number&&storeCardInfo.store_status==1}}">
+          <view class="bespoked"></view>
+          <view wx:if="{{storeCardInfo.user_order_number}}" class="bespoked">您已经预约，预约码为：{{storeCardInfo.user_order_number}}</view>
+      </view>
+      <view  class="bespoke-btn" wx:if="{{storeCardInfo.user_order_number==''&&storeCardInfo.membership.length>0}}" bindtap="myBespokeHandle">预约</view>
+      <view  class="bespoke-btn-gary" wx:if="{{storeCardInfo.user_order_number==''&&storeCardInfo.membership.length<=0}}" bindtap="nomyBespokeHandle" >预约</view>
+      <view wx:if="{{storeCardInfo.membership.length<=0&&storeCardInfo.store_status==1}}" class="vip-tip-info">提示：您还没有办理该店铺会员卡，<text bindtap="toVipHandle">前往办理>></text></view>
+      <!--<view wx:if="{{storeCardInfo.store_status!=1}}" class="vip-tip-info">提示：该店铺已关闭预约功能</view>-->
+    </view>
+  </view>
+  <view class="box" style="margin-bottom:0">
+      <view class="list-title  border-after">
+          <view class="main flex-justify">
+              <view>我的该店卡券</view>
+          </view>
+      </view>
+      <view class="sz-bd">
+              <view class="title">
+                  <view class=" flex-wrp border-after">
+                      <view class="col1 flex-item">类型</view>
+                      <view class="col2 flex-item">活动</view>
+                      <view class="col3 flex-item">余额</view>
+                      <view class="col4 flex-item">有效期</view>
+                  </view>
+              </view>
+              <view class="row" wx:if="{{storeCardInfo.membership.length>0}}" wx:for="{{storeCardInfo.membership}}" wx:key="">
+                  <view class=" flex-wrp border-after">
+                      <view class="col1 flex-item">VIP</view>
+                      <view class="col2 flex-item red-text">充{{item.money}}享{{item.discount}}折优惠</view>
+                      <view class="col3 flex-item">{{item.money}}</view>
+                      <view class="col3 flex-item">{{item.end_time}}</view>
+                  </view>
+              </view>
+              <view class="row" wx:if="{{storeCardInfo.coupon.length>0}}" wx:for="{{storeCardInfo.coupon}}" wx:key="">
+                  <view class=" flex-wrp border-after">
+                      <view class="col1 flex-item">优惠券</view>
+                      <view class="col2 flex-item red-text">满{{item.condition}}元抵{{item.money}}元</view>
+                      <view class="col3 flex-item">无</view>
+                      <view class="col3 flex-item">{{item.use_end_time}}</view>
+                  </view>
+              </view>
+      </view>
+  </view>
+  
+</view>
+
+<view wx:if="{{myBespoke}}"  class="pop-box">
+    <view class="pop-main">
+        <view class="pop-title">
+            <view class="pop-title-m">
+                <text class="border-after">预约</text>
+            </view>
+        </view>
+        <view class="pop-bd">
+            <view class="input-item flex-wrp">
+                <text class="tip-text">预约姓名</text>
+                <input class="border-after flex-item" bindinput="nameInput" type="text" placeholder="输入姓名" auto-focus/>
+            </view>
+            <view class="input-item flex-wrp">
+                <text class="tip-text">联系电话</text>
+                <input class="border-after flex-item" bindinput="phoneInput" type="number" placeholder="输入手机号" />
+            </view>
+        </view>
+        <view wx:if="errorInit" class="erro-init">
+          <text>{{errorInit}}</text>
+        </view>
+        <view class="pop-bt flex-wrp">
+            <view bindtap="popCancelHandle" class="cancel-btn flex-item">
+                <text>取消</text>
+            </view>
+            <view bindtap="popConfirmHandle" class="confirm-btn flex-item">
+                <text>确认</text>
+            </view>
+        </view>
+    </view>
+</view>

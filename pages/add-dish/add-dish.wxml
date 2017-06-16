@@ -1,37 +1,41 @@
-<scroll-view class="body">
+<view class="body">
     <view class="catalog">
         <view class="border-after">*基本信息</view>
     </view>
     <view class="input-area">
         <view class="input-item flex-wrp">
             <text class="tip-text">品名</text>
-            <input class="border-after flex-item" type="number" placeholder="菜品名称" auto-focus/>
+            <input class="border-after flex-item" type="text" bindinput="dishNameInput" placeholder="菜品名称" auto-focus/>
         </view>
         <view class="input-item flex-wrp">
             <text class="tip-text">类别</text>
-            <!--<input class="border-after flex-item" type="number" placeholder="选择类别"/>-->
+            <!--<input class="border-after flex-item" type="number" placeholder=""></input>-->
             <view class="section border-after flex-item">
-                <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <picker bindchange="bindPickerChange" value="{{index}}" range="{{dishClassArr}}">
                     <view class="picker">
-                        {{array[index]}}
+                        {{dishClassArr[index]}}
                     </view>
                 </picker>
             </view>
-            <view class="focus-code">添加类别</view>
+            <view class="focus-code" bindtap="addDishClass">添加类别</view>
         </view>
         <view class="input-item flex-wrp">
             <text class="tip-text">单价</text>
-            <input class="border-after flex-item" type="number" placeholder="菜品单价" auto-focus/>
+            <input class="border-after flex-item" bindinput="dishPriceInput" type="number" placeholder="菜品单价" auto-focus/>
         </view>
     </view>
     <view class="catalog">
         <view class="border-after">*添加图片</view>
     </view>
     <view class="upload-img">
-        <image class="add-dish-img" src="/images/add-dish.jpg"></image>
-        <view class="tip">提示：图片大小至少2000*2000</view>
+        <image class="add-dish-img" src="{{dishImage}}" bindtap="choseDishImage"></image>
+        <view class="tip">提示：图片大小不超过1M</view>
+    </view>
+    <view class="erro-init">
+      <text>{{errorInit}}</text>
     </view>
     <view class="btn-area">
-        <button style="background-color:#f2582a;color:#fff;" type="primary"> 添加 </button>
+        <button style="background-color:#f2582a;color:#fff;" bindtap="addDishHandle" type="primary"> 添加 </button>
     </view>
-</scroll-view>
+</view>
+

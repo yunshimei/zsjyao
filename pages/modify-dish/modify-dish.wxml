@@ -1,20 +1,20 @@
 <!--pages/modify-dish/modify-dish.wxml-->
-<scroll-view class="body">
+<view class="body">
     <view class="catalog">
         <view class="border-after">*基本信息</view>
     </view>
     <view class="input-area">
         <view class="input-item flex-wrp">
             <text class="tip-text">品名</text>
-            <input class="border-after flex-item" type="number" placeholder="菜品名称" auto-focus/>
+            <input class="border-after flex-item" value="{{goodsname}}" bindinput="dishNameInput" type="number" placeholder="菜品名称" auto-focus/>
         </view>
         <view class="input-item flex-wrp">
             <text class="tip-text">类别</text>
             <!--<input class="border-after flex-item" type="number" placeholder="选择类别"/>-->
             <view class="section border-after flex-item">
-                <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <picker bindchange="bindPickerChanges" value="{{index}}" range="{{dishClassArr}}">
                     <view class="picker">
-                        {{array[index]}}
+                        {{dishClassArr[index]}}
                     </view>
                 </picker>
             </view>
@@ -22,39 +22,43 @@
         </view>
         <view class="input-item flex-wrp">
             <text class="tip-text">单价</text>
-            <input class="border-after flex-item" type="number" placeholder="菜品单价" auto-focus/>
+            <input class="border-after flex-item" bindinput="dishPriceInput" value="{{goodsprice}}" type="number" placeholder="菜品单价" auto-focus/>
         </view>
     </view>
     <view class="catalog">
-        <view class="border-after">*添加图片</view>
+        <view class="border-after">*修改图片</view>
     </view>
     <view class="upload-img">
-        <image class="add-dish-img" src="/images/dish-img-01.jpg"></image>
-        <view class="tip">提示：图片大小至少2000*2000</view>
+        <image wx:if="{{goodsimg!=''}}" class="add-dish-img" src="{{goods_img}}" bindtap="choseDishImage"></image>
+        <image wx:if="{{goodsimg==''}}" class="add-dish-img" src="/images/add-dish.jpg" bindtap="choseDishImage"></image>
+        <view class="tip">提示：图片大小不超过1M</view>
+    </view>
+    <view class="erro-init">
+      <text>{{errorInit}}</text>
     </view>
     <view class="dish-show">
         <view class="show-item">
             <view class=" flex-wrp border-after">
-                <view class="flex-item">是否隐藏</view>
+                <view class="flex-item">{{hideTip}}</view>
                 <view class="all-chose">
                     <label class="radio">
-                        <radio class="radio-size" value="" checked="" color="#f2582a"/>
+                        <radio bindtap="hideHandle" class="radio-size" value="" checked="{{isHide}}" color="#f2582a"/>
                     </label>
                 </view>
             </view>
         </view>
         <view class="show-item">
             <view class=" flex-wrp">
-                <view class="flex-item">是否隐藏</view>
+                <view class="flex-item">删除此菜品</view>
                 <view class="all-chose">
                     <label class="radio">
-                        <radio class="radio-size" value="" checked="" color="#f2582a"/>
+                        <radio bindtap="delDishHandle" class="radio-size" value="" checked="" color="#f2582a"/>
                     </label>
                 </view>
             </view>
         </view>
     </view>
-    <view class="btn-area">
-        <button style="background-color:#f2582a;color:#fff;" type="primary"> 保存 </button>
+    <view class="btn-area" style="margin-bottom:20px;">
+        <button style="background-color:#f2582a;color:#fff;" type="primary" bindtap="modifyDishHandle"> 保存 </button>
     </view>
-</scroll-view>
+</view>

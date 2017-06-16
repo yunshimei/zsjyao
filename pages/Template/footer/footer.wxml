@@ -1,7 +1,15 @@
-<template name="footer">
+<template name="footer-client">
     <view class="footer flex-wrp border-befor">
-        <view class="flex-item menu active">菜单</view>
-        <view class="flex-item sel">已点</view>
-        <view class="flex-item my">我的</view>
+        <view class="flex-item menu {{status==0?'active':''}}" data-status="0" bindtap="navHandle">菜单</view>
+        <view class="flex-item sel {{status==1?'active':''}}" data-status="1"  bindtap="navHandle">已点</view>
+        <view class="flex-item my {{status==2?'active':''}}" data-status="2"  bindtap="navHandle">我的</view>
+    </view>
+</template> 
+
+<template name="footer-store">
+    <view class="footer flex-wrp border-befor">
+        <view class="flex-item store-dt {{status==3?'active':''}}" data-status="3" bindtap="navHandle">大堂</view>
+        <view class="flex-item store-menu {{status==4?'active':''}}" data-status="4"  bindtap="navHandle">菜单</view>
+        <view class="flex-item store-center {{status==5?'active':''}}" data-status="5"  bindtap="navHandle">店铺中心</view>
     </view>
 </template> 

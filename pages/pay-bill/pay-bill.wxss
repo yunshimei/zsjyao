@@ -1,0 +1,93 @@
+/* pages/pay-bill/pay-bill.wxss */
+.payable{
+  padding: 15px;
+  margin-bottom: 7px;
+  background-color: #fff;
+  color: #aaa;
+}
+.payable .moneyBar{
+  color: #f2582a;
+  padding-bottom: 8px;
+  border-bottom:1px dashed #ddd;
+  margin-bottom:8px;
+
+}
+.payable .money{
+  
+  /*font-weight: bold;*/
+  font-size: 14px;
+}
+.payable .tip{
+  color: #f89d82;
+}
+.totleBar{
+  height: 50px;
+  line-height: 50px;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-left: 15px;
+}
+.totleBar>view{
+  height:50px;
+}
+.payBtn{
+  height: 50px;
+  line-height: 50px;
+  background-color: #f2582a;
+  color: #fff;
+  width: 80px;
+  text-align: center;
+  font-size: 15px;
+}
+.vip-card-item{
+  width:95%;
+}
+.coupon-item,.vip-card-item{
+  position: relative;
+}
+.coupon-item .choseIcon{
+  right: 15px;
+  top: 25px;
+}
+.vip-card-item .choseIcon{
+  right: -45px;
+  top: 65px;
+}
+.choseIcon{
+  position: absolute;
+  
+  z-index:999;
+  color: #f2582a;
+}
+.choseIcon::before{
+  content: '\e625';
+  font-family: "iconfont";
+  font-size: 24px;
+  /*color: #fff;*/
+}
+.choseBtn{
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  z-index: 999;
+  vertical-align: middle;
+  padding-right: 15px;
+}
+#chsoeStyle{
+  margin-left: 35px;
+}
+.pay-tip{
+  color: #aaa;
+}
+.pay-money{
+  color: #f2582a;
+  font-size: 16px;
+  font-weight: bold;
+}
+.text-hd{
+  color: #333333;
+}

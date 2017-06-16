@@ -1,0 +1,90 @@
+/* pages/setCard/setCard.wxss */
+
+
+ .sz-bd{
+    background-color: #fff;
+    padding: 0 15px;
+    font-size: 14px;
+    text-align: center;
+}
+ .col1{
+    text-align: left;
+    display:block;
+    white-space:nowrap; 
+    overflow:hidden; 
+    text-overflow:ellipsis;
+}
+.sz-bd .title{
+    position: relative;
+    width: 100%;
+    font-size: 12px;
+    padding: 10px 0;
+    color: #9d9d9d;
+}
+.sz-bd .col1,.sz-bd .col2,.sz-bd .col3,.sz-bd .col4{
+    font-size: 12px;
+}
+.sz-bd .row{
+    position: relative;
+    padding: 15px 0;
+}
+.sz-bd .row .data{
+    color:#9d9d9d;
+}
+.red-text{
+    color:#f2582a;
+}
+.green-text{
+    color:#14ac8a;
+}
+.vip-tip{
+  padding: 0 15px;
+  color: #999;
+  margin-bottom: 15px;
+}
+.loading{ 
+ padding: 15px; 
+ text-align: center; 
+ color:#808080;
+} 
+.loading:before{ 
+ display: inline-block; 
+ margin-right: 5rpx; 
+ vertical-align: middle; 
+ content: '\e70e'; 
+ font-family: 'iconfont';
+ width: 40rpx; 
+ height: 40rpx; 
+ /*background: url(../../images/icon-loading.png) no-repeat; */
+ background-size: contain; 
+ animation: rotate 1s linear infinite; 
+} 
+.loading.complete:before{ 
+ display: none; 
+} 
+.memberListHd text{
+  display: block;
+}
+.handleBtnHide{
+  width: 40px;
+  height: 25px;
+  border-radius: 6px;
+  /*background-color:#f2582a;*/
+  border:1px solid #f2582a;
+  color: #f2582a;
+  line-height: 25px;
+  text-align: center;
+  display: inline-block;
+}
+.handleBtnShow{
+  width: 40px;
+  height: 25px;
+  border-radius: 6px;
+  /*background-color:#f2582a;*/
+  border:1px solid #18a672;
+  color: #18a672;
+  line-height: 25px;
+  text-align: center;
+  display: inline-block;
+  
+}

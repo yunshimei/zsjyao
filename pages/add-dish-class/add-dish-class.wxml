@@ -1,0 +1,15 @@
+<!--pages/add-dish-class/add-dish-class.wxml-->
+<view class="body">
+    <view class="input-area">
+        <view class="input-item flex-wrp">
+            <text class="tip-text">菜品类别</text>
+            <input bindinput="dishClassInput"  class="border-after flex-item" type="text" placeholder="请输入菜品类别" auto-focus/>
+        </view>
+    </view>
+    <view class="erro-init">
+      <text>{{errorInit}}</text>
+    </view>
+    <view class="btn-area">
+        <button style="background-color:#f2582a;color:#fff;" type="primary" bindtap="submitHandle"> 提交 </button>
+    </view>
+</view>

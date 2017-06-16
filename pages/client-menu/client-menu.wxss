@@ -1,12 +1,16 @@
 /**client-menu.wxss**/
-.sel-list{
+.sel-bar{
   height: auto;
   background-color: #f8f8f8;
-  position: fixed;
+  position: absolute;
   top: 100px;
   left: 0;
   right: 0;
   z-index: 100;
+}
+.sel-bar.sel-bar-fixed {
+  position: fixed;
+  top: 0;
 }
 
 .store-menu{
@@ -14,6 +18,8 @@
 }
 .store-menu .dish-class{
   top:0;
+
+  
 }
 .add-dish{
   position: absolute;
@@ -27,6 +33,8 @@
   color: #f2582a;
   z-index: 300;
   font-size: 13px;
+  box-sizing: border-box;
+  width: 60px;
 }
 .store-menu .dish-main{
   top:40px;

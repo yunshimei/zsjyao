@@ -1,0 +1,25 @@
+<!--pages/vip-handle/vip-handle.wxml-->
+<view class="body">
+  <view class="store-head vip-haed" style="">
+        <view>
+            <view><image class="store-img" style="border-radius:50%;border:2px solid #fff" src="{{storeLogo || '/images/no-store-head.png'}}"></image></view>
+            <view class="vip-handle-hd">
+                <text>望江楼</text>
+            </view>
+        </view>
+  </view>
+  <view class="re-bd">
+      <view class="list-continer">
+        <view class="re-item" wx:for="{{storeVipCardData.list}}" wx:key="" bindtap="rechargeVipCard" data-ms_id="{{item.ms_id}}">
+          <text>充值<text class="re-je">{{item.money}}</text>元,享<text class="re-je">{{item.discount}}</text>折优惠</text>
+          <view class="end-data">享受折扣有效期至:{{item.end_time}}</view>
+        </view>
+    </view>
+  </view>
+  <view class="vip-txt">
+    <view>单次抵扣上限:{{storeVipCardData.max_money}}元</view>
+  </view>
+  <view class="vip-tip">
+    截止日期到后,将会失去折扣效力,卡内剩余部分本金余额仍可用于消费抵扣.
+  </view>
+</view>

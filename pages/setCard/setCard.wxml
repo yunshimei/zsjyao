@@ -1,0 +1,134 @@
+<!--pages/setCard/setCard.wxml-->
+<view  class="body">
+  <view class="switch-bar">
+      <view class="flex-wrp border-after">
+          <view class="flex-item {{status==0?'active':''}}"  bindtap="tabNavHandle" data-status="0">会员卡设置</view>
+          <view class="flex-item {{status==1?'active':''}}"  bindtap="tabNavHandle"  data-status="1">我的会员</view>
+      </view>
+  </view>
+  <view wx:if="{{status==0}}">
+    <view class="box">
+        <view class="list-title  border-after">
+            <view class="main flex-justify">
+                <view>会员卡条件设置<text>(*最多可设置三种折扣会员卡)</text></view>
+            </view>
+        </view>
+        <view class="input-area">
+          <view class="input-item flex-wrp">
+            <view  class="tip-text"><text>充值金额</text></view>
+            <view class="border-after flex-item"><input type="number" bindinput="amountInput" placeholder="请输入会员卡充值金额" /></view>
+          </view>
+          <view class="input-item flex-wrp">
+            <view  class="tip-text"><text>折扣选择</text></view>
+            <!--<input class="border-after flex-item" type="text" placeholder="请输入会员卡充值金额" />-->
+            <view class="section border-after flex-item">
+                <picker bindchange="bindPickerChange" value="{{index}}" range="{{discountChoseArr}}">
+                    <view class="picker" style="{{index==0?'color:#808080':''}}">
+                        {{discountChoseArr[index]}}
+                    </view>
+                </picker>
+            </view>
+          </view>
+          <!--<view class="input-item flex-wrp" wx:if="{{amount!='' && index!=0}}">
+            <view class="tip-text">相当于赠送</view>
+            <view class="border-after flex-item">{{largess}}</view>
+          </view>
+          <view class="input-item flex-wrp" wx:if="{{amount!='' && index!=0}}">
+            <view class="tip-text">卡内数值</view>
+            <view class="border-after flex-item">{{totle}}</view>
+          </view>-->
+          <view class="input-item flex-wrp">
+            <view class="tip-text">折扣上限</view>
+            <view class="border-after flex-item"><input type="text" bindinput="maxMoneyInput" value="{{setedViptype.length>=1?max_money:''}}" placeholder="{{setedViptype.length<=0?'设置单次折扣上限':''}}" style="{{setedViptype.length<=0?'color:#808080':''}}" disabled="{{setedViptype.length>=1?true:false}}"/></view>
+          </view>
+          <view class="input-item flex-wrp">
+            <view class="tip-text">有效期</view>
+            <view class="list-continer flex-item" style="padding-left:0">
+              <radio-group class="flex-wrp coupon-style" bindchange="radioChange">
+                  <label class="flex-item">
+                    <radio class="radio-size" value="1" checked="" color="#f2582a"/>{{year}}-12-31
+                  </label>
+                  <label class="flex-item">
+                    <radio class="radio-size" value="2" checked="" color="#f2582a"/>长期
+                  </label>
+              </radio-group>
+                <!--<view class="flex-wrp coupon-style">
+                    <view class="flex-item">
+                        <label class="radio">
+                            <radio class="radio-size" value="" checked="" color="#f2582a"/>
+                        </label>
+                    </view>
+                    <view class="flex-item">
+                        <label class="radio">
+                            <radio class="radio-size" value="" checked="" color="#f2582a"/>长期
+                        </label>
+                    </view>
+                </view>-->
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{errorInit!=''}}" class="erro-init">
+          <text>{{errorInit}}</text>
+        </view>
+        <view class="btn-area" style="padding-bottom:15px;">
+            <button bindtap="vipReleaseHandle" style="background-color:#f2582a;color:#fff;" type="primary"> 发布 </button>
+        </view>
+    </view>
+    <view class="box">
+      <view class="list-title  border-after">
+          <view class="main flex-justify">
+              <view>已设置卡型</view>
+          </view>
+      </view>
+      <view class="sz-bd">
+              <view class="title">
+                  <view class=" flex-wrp border-after">
+                      <view class="col1 flex-item">折扣</view>
+                      <view class="col2 flex-item">基本充值</view>
+                      <view class="col3 flex-item">有效期</view>
+                      <view class="col4 flex-item">操作</view>
+                  </view>
+              </view>
+              <view class="row" wx:for="{{setedViptype}}" wx:key="">
+                  <view class=" flex-wrp border-after" style="line-height:27px;">
+                      <view class="col1 flex-item">{{item.discount}}折</view>
+                      <view class="col2 flex-item red-text">{{item.money}}</view>
+                      <view class="col3 flex-item">{{item.end_time}}</view>
+                      <view class="col4 flex-item">
+                        <text wx:if="{{item.is_hide==0}}" bindtap="isShowBtn" data-ms_id="{{item.ms_id}}" data-is_hide="1" class="handleBtnHide">隐藏</text>
+                        <text wx:if="{{item.is_hide==1}}" bindtap="isShowBtn" data-ms_id="{{item.ms_id}}" data-is_hide="0" class="handleBtnShow">显示</text>
+                      </view>
+                  </view>
+              </view>
+          </view>
+    </view>
+    <view  class="vip-tip">
+      <text>截止日期到后,将会失去折扣效力,卡内剩余部分本金余额仍可用于消费抵扣.</text>
+    </view>
+  </view>
+  <scroll-view scroll-y="true"  wx:if="{{status==1}}" bindscrolltolower="lower">
+    <view class="box" style="margin-bottom:0">
+      <view class="sz-bd">
+          <view class="title">
+              <view class=" flex-wrp border-after memberListHd">
+                  <view class="col1 flex-item">会员<text>({{memberNum}})</text></view>
+                  <view class="col2 flex-item">卡型</view>
+                  <!--<view class="col3 flex-item">余值<text>({{totleMoney}})</text></view>-->
+                  <view class="col4 flex-item">余额<text>({{money}})</text></view>
+              </view>
+          </view>
+          <view class="row"  wx:for="{{memberList}}" wx:key="">
+              <view class=" flex-wrp border-after">
+                  <view class="col1 flex-item">{{item.nickname}}</view>
+                  <view class="col2 flex-item red-text">{{item.discount}}折</view>
+                  <!--<view class="col3 flex-item">{{item.totle}}</view>-->
+                  <view class="col4 flex-item">{{item.money}}</view>
+              </view>
+          </view>
+          
+      </view>
+    </view>
+    <view class="loading" wx:if="{{searchLoading}}">加载中...</view> 
+    <view class="loading complete" wx:if="{{searchLoadingComplete}}">数据已加载完毕...</view>
+  </scroll-view>
+</view>

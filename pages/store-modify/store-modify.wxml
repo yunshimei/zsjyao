@@ -1,39 +1,87 @@
+
 <view class="body">
-    <view class="modify">
-        <view class="modify-item flex-wrp">
+  <view class="modify">
+  <!--店铺LOGO-->
+    <view class="header">
+      <view class="header-c">
+        <view class="flex-wrp" bindtap="changeLogoHandle">
+          <view class="flex-item">店铺LOGO</view>
+          <view><image  src="{{storeLogo || '/images/no-store-head.png'}}"></image></view>
+          <view style="padding-right:15px;" class="r-arrow"></view>
+        </view>
+      </view>
+    </view>
+    <!--店铺信息-->
+    <view class="store-info">
+        <!--<view class="modify-item">
+          <view class="flex-wrp border-after">
             <view class="flex-item tip skin">招牌</view>
             <view class="r-arrow">无</view>
+          </view> 
+        </view>-->
+        <view class="modify-item"  bindtap="modiName">
+          <view class="flex-wrp border-after">
+            <view class="flex-item tip skin">店名</view>
+            <view class="r-arrow">{{storeCenterData.store_name || '未设置'}}</view>
+          </view> 
         </view>
-        <view class="modify-item flex-wrp" bindtap="modiName">
-            <view class="flex-item tip store-name">店名</view>
-            <view class="r-arrow">老码头火锅(红牌楼店)</view>
+        <view class="modify-item"  bindtap="modiAddr">
+          <view class="flex-wrp border-after">
+            <view class="flex-item tip skin">地址</view>
+            <view class="r-arrow">{{storeCenterData.address || '未设置'}}</view>
+          </view> 
         </view>
-        <view class="modify-item flex-wrp" bindtap="modiAddr">
-            <view class="flex-item tip store-addr">地址</view>
-            <view class="r-arrow">武侯人民南路</view>
+        <view class="modify-item"  bindtap="modiNum">
+          <view class="flex-wrp border-after">
+            <view class="flex-item tip skin">账号</view>
+            <view class="r-arrow">{{storeCenterData.seller_name || '未设置'}}</view>
+          </view> 
         </view>
-        <view class="modify-item flex-wrp" bindtap="modiPhone">
-            <view class="flex-item tip store-phone">电话</view>
-            <view class="r-arrow">15896324856</view>
+        <view class="modify-item"  bindtap="modiPhone">
+          <view class="flex-wrp border-after">
+            <view class="flex-item tip skin">店铺电话</view>
+            <view class="r-arrow">{{storeCenterData.store_phone || '未设置'}}</view>
+          </view> 
         </view>
-        <view class="modify-item flex-wrp" bindtap="modiAuthen">
-            <view class="flex-item tip store-authen">实名认证</view>
-            <view class="r-arrow">未认证</view>
+        <view class="modify-item"  bindtap="modiAuthen">
+          <view class="flex-wrp border-after">
+            <view class="flex-item tip skin">实名认证</view>
+            <view class="r-arrow">{{storeCenterData.is_real || '未认证'}}</view>
+          </view> 
         </view>
-        <view class="modify-item flex-wrp" bindtap="modiCoupon">
-            <view class="flex-item tip store-coupon">发布优惠券</view>
+    </view>
+    <!--店铺操作-->
+    <view class="store-info">
+        <view class="modify-item" id="switchBar">
+          <view class="flex-wrp border-after">
+            <view class="flex-item tip skin">开启预约功能</view>
+            <view bindtap="openBespokeHandle"><switch checked="{{isOpenBespoke}}" bindchange="switch1Change" /></view>
+          </view> 
+        </view>
+        <view class="modify-item"  bindtap="toSetCard">
+          <view class="flex-wrp border-after">
+            <view class="flex-item tip skin">会员卡</view>
             <view class="r-arrow"></view>
+          </view> 
         </view>
-        <view class="modify-item flex-wrp">
-            <view class="flex-item tip store-cash" bindtap="modiCash">提现</view>
-            <view class="r-arrow">账户余额￥3500.00</view>
+        <view class="modify-item"  bindtap="modiCoupon">
+          <view class="flex-wrp border-after">
+            <view class="flex-item tip skin">发布优惠券</view>
+            <view class="r-arrow"></view>
+          </view> 
         </view>
-        <view class="modify-item flex-wrp">
-            <view class="flex-item tip store-blacklist" bindtap="modiBlacklist">黑名单</view>
+        <view class="modify-item" bindtap="modiCash">
+          <view class="flex-wrp border-after">
+            <view class="flex-item tip skin">提现</view>
+            <view class="r-arrow"></view>
+          </view> 
+        </view>
+        <view class="modify-item" bindtap="modiBlacklist">
+          <view class="flex-wrp border-after">
+            <view class="flex-item tip skin">黑名单</view>
             <view class="r-arrow">0人</view>
+          </view> 
         </view>
     </view>
-    <view class="customer">
-        咨询客服 0756-4526879
-    </view>
+  </view>
 </view>

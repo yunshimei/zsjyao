@@ -1,0 +1,24 @@
+<!--pages/m-store-num/m-store-nmu.wxml-->
+<view class="body">
+    <view class="input-area">
+        <view class="input-item flex-wrp">
+            <text class="tip-text">手机</text>
+            <input class="border-after flex-item" bindinput="phoneInput" value="{{seller_name}}" type="number" placeholder="手机号码" auto-focus/>
+        </view>
+        <view class="input-item flex-wrp">
+            <text class="tip-text">身份证</text>
+            <input class="border-after flex-item" bindinput="IdCardInput" value="{{card_id}}"  placeholder="身份证后六位"/>
+        </view>
+        <view class="input-item flex-wrp">
+            <text class="tip-text">验证码</text>
+            <input class="border-after flex-item" bindinput="codeInput" maxlength="4" type="number" placeholder="输入验证码"/>
+            <view class="focus-code" bindtap="getCodeHandle">{{codeTip}}</view>
+        </view>
+    </view>
+    <view class="erro-init">
+      <text>{{errorInit}}</text>
+    </view>
+    <view class="btn-area">
+        <button bindtap="submitHandle" style="background-color:#f2582a;color:#fff;" type="primary"> 提交 </button>
+    </view>
+</view>

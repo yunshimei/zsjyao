@@ -1,11 +1,25 @@
 /**app.wxss**/
 @import "pages/Template/footer/footer.wxss";  
+@import "pages/client-menu/client-menu.wxss";
+@import "pages/client-sel/client-sel.wxss";
+@import "pages/client-my/client-my.wxss";
+@import "pages/store-dt/store-dt.wxss";
+@import "pages/store-menu/store-menu.wxss";
+@import "pages/store-center/store-center.wxss";
+
 
 .body{
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
+  left: 0;
+}
+.body-bottom50{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 50px;
   left: 0;
 }
 Page{
@@ -15,6 +29,9 @@ Page{
   color: #333333;
   font-size: 13px;
   box-sizing: border-box;
+}
+.hide{
+  display: none;
 }
 /**文字**/
 .gray-text{
@@ -44,7 +61,10 @@ Page{
 .border-after::after{
   bottom:-1px;
 }
-
+switch{
+  transform: scale(.8);
+  -webkit-transform: scale(.8);
+}
 
 /**布局**/
 .flex-wrp{
@@ -85,11 +105,11 @@ Page{
 /**字体图标**/
 @font-face {
   font-family: 'iconfont';  /* project id 288852 */
-  src: url('//at.alicdn.com/t/font_t0kvzdqkyjm50zfr.eot');
-  src: url('//at.alicdn.com/t/font_t0kvzdqkyjm50zfr.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_t0kvzdqkyjm50zfr.woff') format('woff'),
-  url('//at.alicdn.com/t/font_t0kvzdqkyjm50zfr.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_t0kvzdqkyjm50zfr.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_xhx8rrh19atf0f6r.eot');
+  src: url('//at.alicdn.com/t/font_xhx8rrh19atf0f6r.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_xhx8rrh19atf0f6r.woff') format('woff'),
+  url('//at.alicdn.com/t/font_xhx8rrh19atf0f6r.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_xhx8rrh19atf0f6r.svg#iconfont') format('svg');
 }
 .iconfont{
     font-family:"iconfont" !important;
@@ -145,11 +165,7 @@ Page{
   width: 100%;
   height: 100px;
   text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
+  position: relative;
 }
 .skin-box .skin-img{
   width: 100%;
@@ -157,10 +173,16 @@ Page{
 }
 .skin-box .skin-text{
   text-align: center;
-  color:#fff;
-  text-shadow: 2px 2px 4px #9f0100;
-  font-size: 20px;
+  color:transparent;
+  text-shadow: 0px 0px 0px #fff;
+  -webkit-text-stroke: 1px #9f0100;
+  text-stroke: 1px #9f0100;
+  font-size: 16px;
   font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%)
 }
 
 /**列表表头**/
@@ -183,13 +205,18 @@ Page{
 .list-main{
   flex-direction:row;
   font-size: 13px;
-  padding: 10px 15px 0 15px;
+  padding: 0px 15px 0 15px;
 }
 .list-main .dish-name{
   width: 33.3%;
-  padding-bottom: 10px;
+  /*padding-bottom: 10px;*/
+  line-height: 25px;
   padding-right: 15px;
   box-sizing: border-box;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+
 }
 /**菜品分类**/
 .dish-class{
@@ -199,11 +226,6 @@ Page{
   height: 40px;
   line-height: 40px;
   font-size: 13px;
-  position: fixed;
-  top: 175px;
-  left: 0;
-  right: 0;
-  z-index: 100;
   overflow-x: hidden;
 }
 .dish-box{
@@ -216,6 +238,10 @@ Page{
 .dish-class .active{
   color: #f2582a;
   border-bottom: 2px solid #f2582a;
+  position:relative;
+  bottom:-2px;
+  z-index:999;
+
 }
 
 /**菜品列表**/
@@ -224,21 +250,21 @@ Page{
   top: 215px;
   left: 0;
   right: 0;
-  padding-bottom: 15px;
+  bottom: 0;
 }
 .dish-list{
   padding:8px;
   background-color: #fff;
 }
 .dish-item{
-  width: 33.33%;
+  width: 50%;
   padding: 8px 8px 0px 8px;
   box-sizing: border-box;
 }
 
 .dish-item .dish-img{
   width: 100%;
-  max-height:210rpx;
+  max-height:300rpx;
   border-radius: 5px;
   margin-bottom: 5px;
   font-size: 0;
@@ -254,19 +280,29 @@ Page{
   font-size: 13px;
   text-align: left;
   color: #f2582a;
+  padding-top: 3px;
 }
 .number{
-  text-align: right;
-  -webkit-align-self: flex-end;
-	align-self: flex-end;
+  /*text-align: right;*/
+  /*-webkit-align-self: flex-end;
+	align-self: flex-end;*/
+  /*vertical-align: middle;*/
+  position:relative;
+  top:-3px;
+
+}
+.dishList-bottom{
+  padding-bottom: 8px;
 }
 .add-icon,.minus-icon{
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
 }
 .num{
   font-size: 14px;
   padding: 0 5px;
+  vertical-align: middle;
 }
 .num-input{
   width: 60px;
@@ -275,10 +311,12 @@ Page{
 .dish-item .no-img{
   width: 100%;
   border-radius: 5px;
-  padding-top: 8px;
+  /*padding-top: 8px;*/
   box-sizing: border-box;
   background-color: #eaf5db;
   padding: 8px 3px;
+  margin-bottom:8px;
+
 }
 
 /**广告横幅banner**/
@@ -307,7 +345,9 @@ Page{
 .order-list{
   margin-left: 15px;
   position: relative;
-  padding-bottom: 15px;
+  padding-bottom:8px;
+  margin-top:5px;
+  border-bottom:1px dashed #eee;
 }
 
 /**单选框**/
@@ -355,7 +395,7 @@ Page{
   height: 65px;
   border-radius: 50%;
 }
-
+/**右箭头**/
 .r-arrow::after{
   content: "\e612";
   font-family: "iconfont";
@@ -411,6 +451,7 @@ Page{
 .btn-area{
   padding: 0 15px;
   margin-top: 25px;
+  margin-bottom:25px;
 }
 .btn-area .tip{
   font-size: 12px;
@@ -427,18 +468,26 @@ Page{
     font-size: 13px;
     color: #9d9d9d;
     position: relative;
-    padding:10px 15px;
+    height: 35px;
+    line-height: 35px;
     background-color: #fff;
     text-align: center;
+    padding: 0 15px;
+}
+.switch-bar view{
+  padding: 0 20px;
 }
 .switch-bar .active{
     color: #f2582a;
 }
 .switch-bar .active::after{
+    display: block;
     content: " ";
-    height: 2px;
-    width: 50px;
-    background-color: #f2582a;
+    height: 0px;
+    border-bottom: 2px solid #f2582a;
+    position: relative;
+    bottom: 2px;
+    z-index:999;
 }
 
 /**弹框**/
@@ -450,7 +499,7 @@ Page{
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, .7);
-  z-index: 200;
+  z-index: 1000;
   box-sizing: border-box;
 }
 .pop-main{
@@ -464,8 +513,6 @@ Page{
   right: 0;
   bottom: 0;
   background-color: #fff;
-  
-  
 }
 .pop-title{
   height: 48px;
@@ -473,7 +520,7 @@ Page{
   width: 100%;
   text-align: center;
   font-size: 17px;
-  padding: 0 15px;
+  /*padding: 0 15px;*/
   box-sizing: border-box;
 }
 .pop-title-m{
@@ -570,4 +617,75 @@ Page{
   float: right;
   margin: 0 15px;
   color: #f2582a;
+}
+
+
+/**隐藏菜品**/
+.hideDishBox{
+  padding: 8px 8px 0px 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+}
+.hideDish{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.4);
+}
+
+/**会员卡**/
+.vip-card-item{
+  width: 100%;
+  padding: 15px 0;
+  /*margin-right: 15px;*/
+  
+}
+.vip-card{
+  width: 100%;
+  height: 100px;
+  background-color: #db9e0d;
+  /*border-radius: 6px;*/
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  position: relative;
+  padding:20px 0 0 15px;
+  background-image: url("https://www.zsjyao.com/Public/weixin/image/vip-icon.png");
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position-x: 90%;
+  background-position-y: 10%;
+  box-sizing: border-box;
+}
+.vip-card .vip-icon{
+  box-sizing: border-box;
+}
+.vip-info{
+  color: #fff;
+  width: 100%;
+  white-space: wrap;
+}
+.vip-info .name{
+  font-size: 17px;
+  height:50px;
+}
+.vip-info .price{
+  /*font-size: 15px;*/
+  /*font-weight: bold;*/
+}
+.vip-icon::before{
+  content: '\e667';
+  font-family: 'iconfont';
+  color: #c28c0b;
+  font-size: 60px;
+  padding-right: 15px;
+}
+.vip-time{
+  background-color: #d1970c;
+  color: #fff;
+  padding: 8px 15px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }

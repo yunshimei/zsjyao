@@ -1,64 +1,68 @@
-<scroll-view scroll-y="true" class="body">
+<scroll-view scroll-y="true" class="body-bottom50 {{status==2?'':'hide'}}">
     <view class="my-info">
         <image src="/images/my-info-bg.jpg" mode="scaleToFill"></image>
-        <view class="info flex-wrp">
-            <view><image class="head-por" mode="scaleToFill" src="/images/member-img.jpg"></image></view>
-            <view class="user-text flex-item">
-                <view class="title"><text>LISA汪</text></view>
-                <view><text>吃货荣誉：平民</text></view>
+        <view class="info">
+            <view><image class="head-por" mode="scaleToFill" src="{{userInfo.avatarUrl}}"></image></view>
+            <view class="user-text">
+                <view class="title"><text>{{userInfo.nickName}}</text></view>
+                <!--<view><text>吃货荣誉：平民</text></view>-->
             </view>
-            <view class="burse">
+            <!--<view class="burse">
                 <view><text class="balance">200.00</text></view>
                 <view><text>钱包余额</text></view>
-            </view>
+            </view>-->
         </view>
     </view>
-    <view class="box">
+    <view class="box" wx:if="{{selVipCoupon.coupon.count>0}}">
         <view class="list-title  border-after">
-            <view class="main flex-wrp flex-justify">
+            <view class="main flex-wrp flex-justify" bindtap="toCouponList" data-store_id="{{selVipCoupon.coupon.store_id}}">
                 <view class="flex-item">优惠券</view>
-                <view><text class="coupon-num">共 10 张</text></view>
+                <view><text class="coupon-num">共 {{selVipCoupon.coupon.count}} 张</text></view>
             </view>
         </view>
         <view class="list-continer coupon-box">
-            <view class="coupon-item">
+            <view class="coupon-item" bindtap="toStoreCardInfo" data-store_id="{{selVipCoupon.coupon.store_id}}">
                 <view class="flex-wrp coupon-info  border-after">
                         <view class="coupon-money">
                             <image class="coupon-l" src="/images/coupon.png"></image>
                             <text class="rmb">¥</text>
-                            <text class="je">80</text>
+                            <text class="je">{{selVipCoupon.coupon.money || '0'}}</text>
                             <image class="coupon-r" src="/images/coupon.png"></image>
                         </view>
                         <view class="flex-item coupon-text">
-                            <view><text>江月楼</text></view>
-                            <view><text>店内满300元可用</text></view>
+                            <view><text>{{selVipCoupon.coupon.store_name || ''}}</text></view>
+                            <view><text>店内满{{selVipCoupon.coupon.condition || '0'}}元可用</text></view>
                             <view class="coupon-day">
-                                <text>2017.05.05~2017.06.06</text>
+                                <text>{{selVipCoupon.coupon.use_start_time}}~{{selVipCoupon.coupon.use_end_time}}</text>
                             </view>
                         </view>
                 </view>
             </view>
-            <view class="coupon-item">
-                    <view class="flex-wrp coupon-info">
-                        <view class="coupon-money">
-                            <image class="coupon-l" src="/images/coupon.png"></image>
-                            <text class="rmb">¥</text>
-                            <text class="je">80</text>
-                            <image class="coupon-r" src="/images/coupon.png"></image>
-                        </view>
-                        <view class="flex-item coupon-text">
-                            <view><text>江月楼</text></view>
-                            <view><text>店内满300元可用</text></view>
-                            <view class="coupon-day">
-                                <text>2017.05.05~2017.06.06</text>
-                            </view>
-                        </view>
-                    </view>
-                    
+        </view>
+    </view>
+    <view class="box" wx:if="{{selVipCoupon.mslist.count>0}}">
+        <view class="list-title  border-after">
+            <view class="main flex-wrp flex-justify" bindtap="toVipList">
+                <view class="flex-item">会员卡</view>
+                <view><text class="coupon-num">共 {{selVipCoupon.mslist.count}} 张</text></view>
+            </view>
+        </view>
+        <view class="list-continer coupon-box" style="padding-left:30px;padding-right:30px;">
+            <view class="vip-card-item"  bindtap="toStoreCardInfo" data-store_id="{{selVipCoupon.mslist.store_id}}">
+              <view class="vip-card">
+                <view class="vip-info">
+                  <view class="name">{{selVipCoupon.mslist.store_name || ''}}{{selVipCoupon.mslist.discount || '0'}}折</view>
+                  <view class="flex-wrp">
+                      <view class="price flex-item">余额 {{selVipCoupon.mslist.money || '0'}}</view>
+                      <view class="flex-item">单次折扣上限 {{selVipCoupon.mslist.max_money || '0'}}</view>
+                  </view>
+                </view>
+              </view>
+              <view class="vip-time">有效期至：{{selVipCoupon.mslist.end_time}}</view>
             </view>
         </view>
     </view>
-    <view class="box">
+    <view class="box" style="margin-bottom:0">
         <view class="list-title  border-after">
             <view class="main flex-wrp flex-justify">
                 <view class="flex-item">吃货之路</view>
@@ -69,7 +73,7 @@
             <view class="pt-30">
                 <view class="gastro-item flex-wrp">
                     <view class="day">13</view>
-                    <view class="store-head">
+                    <view class="client-store-head">
                         <image src="/images/member-img.jpg"></image>
                     </view>
                     <view class="flex-item gastro-text">
@@ -79,7 +83,7 @@
                 </view>
                 <view class="gastro-item flex-wrp">
                     <view class="day">13</view>
-                    <view class="store-head">
+                    <view class="client-store-head">
                         <image src="/images/member-img.jpg"></image>
                     </view>
                     <view class="flex-item gastro-text">
@@ -89,7 +93,7 @@
                 </view>
                 <view class="gastro-item flex-wrp">
                     <view class="day">13</view>
-                    <view class="store-head">
+                    <view class="client-store-head">
                         <image src="/images/member-img.jpg"></image>
                     </view>
                     <view class="flex-item gastro-text">

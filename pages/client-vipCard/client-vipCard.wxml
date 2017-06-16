@@ -1,0 +1,17 @@
+<!--pages/client-vipCard/client-vipCard.wxml-->
+<view class="box">
+    <view class="list-continer coupon-box vipCardList" style="padding-left:30px;padding-right:30px;">
+        <view class="vip-card-item" wx:for="{{myVipList}}" wx:key="" bindtap="toStoreCardInfo" data-store_id="{{item.store_id}}">
+          <view class="vip-card">
+            <view class="vip-info">
+              <view class="name">{{item.store_name || ''}}{{item.discount || '0'}}折卡</view>
+              <view class="flex-wrp">
+                  <view class="price flex-item">余额 {{item.money || '0'}}</view>
+                  <view class="flex-item">单次折扣上限 {{item.max_money || '0'}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="vip-time">有效期至：{{item.end_time}}</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,49 @@
+/* pages/vip-handle/vip-handle.wxss */
+.vip-haed{
+  background: #ec8668;
+  padding-bottom:0;
+  text-align:center;
+}
+.vip-handle-hd{
+  line-height: 50px;
+  font-size: 17px;
+  color: #fff;
+}
+
+.re-bd{
+  margin-top: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    background-color: #fff;
+}
+.re-bd .re-item{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ec8668;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    color: #f2582a;
+}
+.re-item .re-je{
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0 5px;
+}
+.vip-txt{
+  background-color: #fff;
+  margin-bottom: 15px;
+  padding: 0 15px;
+}
+.vip-txt view{
+  padding-bottom: 15px;
+}
+.vip-tip{
+  padding: 0 15px;
+  color: #999;
+  margin-bottom: 15px;
+}
+.end-data{
+  color: #ec8668;
+}

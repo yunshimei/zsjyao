@@ -1,7 +1,7 @@
 <scroll-view scroll-y="true" class="body">
   <view class="banner">
     <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" autoplay="{{autoplay}}" circular="{{circular}}">
-         <block wx:for="{{imgUrls}}">
+         <block wx:for="{{imgUrls}}" wx:key="index">
             <swiper-item>
                 <image class="banner-img" src="{{item}}" />
             </swiper-item>
@@ -9,30 +9,25 @@
     </swiper>
   </view>
   <view class="desk-num">
-    <text>5号餐桌</text>
+    <text>{{table_id}}号餐桌</text>
   </view>
-  <view class="box">
+  <view class="box" style="margin-bottom:0">
     <view class="list-title  border-after">
         <view class="main flex-wrp flex-justify">
-            <view class="flex-item"><span>7</span>号桌以点</view>
+            <view class="flex-item">已点菜单</view>
         </view>
     </view>
     <view class="list-continer">
         <view class="sel-detail">
-            <view class="flex-wrp sel-item">
-                <view class="flex-item">老鸭鸳鸯锅</view>
-                <view>￥38</view>
-                <view>x1</view>
-            </view>
-            <view class="flex-wrp sel-item">
-                <view class="flex-item">老鸭鸳鸯锅</view>
-                <view>￥38</view>
-                <view>x1</view>
+            <view wx:for="{{selList}}" wx:key="{{index}}" class="flex-wrp sel-item">
+                <view class="flex-item">{{item.goods_name}}</view>
+                <view>￥{{item.shop_price}}</view>
+                <view>x{{item.number}}</view>
             </view>
         </view>
         <view class="detail-total">
-            <view>就餐人数12人</view>
-            <view>共4件菜品<text class="d-total">￥68</text></view>
+            <view>就餐人数{{num_peo}}人</view>
+            <view>共{{menu_num}}件菜品<text class="d-total">￥{{menu_price}}</text></view>
         </view>
     </view>
   </view>

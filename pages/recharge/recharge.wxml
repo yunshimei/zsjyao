@@ -15,27 +15,12 @@
             </view>
         </view>
         <view class="list-continer">
-            <view class="re-item">
-                <text>充值<text class="re-je">2000</text>元 <text class="re-tip">月基本费6元/桌，1.2元/次/桌</text></text>
-            </view>
-            <view class="re-item">
-                <text>充值<text class="re-je">2000</text>元 <text class="re-tip">月基本费6元/桌，1.2元/次/桌</text></text>
-            </view>
-            <view class="re-item">
-                <text>充值<text class="re-je">2000</text>元 <text class="re-tip">月基本费6元/桌，1.2元/次/桌</text></text>
-            </view>
-            <view class="re-item">
-                <text>充值<text class="re-je">2000</text>元 <text class="re-tip">月基本费6元/桌，1.2元/次/桌</text></text>
-            </view>
-            <view class="re-item">
-                <text>充值<text class="re-je">2000</text>元 <text class="re-tip">月基本费6元/桌，1.2元/次/桌</text></text>
-            </view>
-            <view class="re-item">
-                <text>充值<text class="re-je">2000</text>元 <text class="re-tip">月基本费6元/桌，1.2元/次/桌</text></text>
+            <view class="re-item {{item.p_id==p_id?'re-chose':''}}" wx:for="{{packageArr}}" wx:key="{{index}}" bindtap="rechargeHandle" data-p_id="{{item.p_id}}">
+                <text>充值<text class="re-je">{{item.p_recharge}}</text>元 <text class="re-tip">月基本费{{item.p_basic}}元/桌，{{item.p_fee}}元/次/桌</text></text>
             </view>
         </view>
         <view class="btn-area">
-            <button style="background-color:#f2582a;color:#fff;" type="primary"> 充值 </button>
+            <button bindtap="rechargeBtn" style="background-color:#f2582a;color:#fff;" type="primary"> 充值 </button>
             <view class="tip">提示：点击充值即表示同意<text>《充值协议》</text>协议</view>
         </view>
     </view>

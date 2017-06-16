@@ -1,8 +1,8 @@
 <!--client-sel.wxml-->
-<scroll-view scroll-y="true" class="body">
+<scroll-view scroll-y="true" class="body-bottom50 {{status==1?'':'hide'}}">
   <view class="banner">
-    <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}" autoplay="{{autoplay}}" circular="{{circular}}">
-         <block wx:for="{{imgUrls}}">
+    <swiper indicator-dots="{{selData.indicatorDots}}" indicator-color="{{selData.indicatorColor}}" indicator-active-color="{{selData.indicatorActiveColor}}" autoplay="{{selData.autoplay}}" circular="{{selData.circular}}">
+         <block wx:for="{{selData.imgUrls}}" wx:key="{{index}}">
             <swiper-item>
                 <image class="banner-img" src="{{item}}" />
             </swiper-item>
@@ -10,79 +10,58 @@
     </swiper>
   </view>
   <view class="desk-num">
-    <text>5号餐桌</text>
+    <text>{{table_id}}号餐桌</text>
   </view>
   <view class="box">
-    <view class="list-title  border-after">
+    <view class="list-title  border-after" bindtap="toSelDefault">
         <view class="main flex-wrp flex-justify">
-            <view class="flex-item" bindtap="toSelDetail"><span>7</span>号桌以点</view>
-            <view class="flex-wrp number">
+            <view class="flex-item" bindtap="toSelDetail">以点菜单</view>
+            <view wx:if="{{role==3}}" class="r-arrow"></view>
+            <view wx:if="{{role==1||role==2}}" class="flex-wrp number">
                 <image class="minus-icon flex-algin-c" src="/images/minus.png"></image>
                 <view class="num flex-algin-c"><input class="num-input" placeholder="就餐人数" type="number"/></view>
                 <image class="add-icon flex-algin-c" src="/images/add.png"></image>
             </view>
         </view>
     </view>
-    <view class="order-list">
-        <view class="list-main flex border-after">
-            <text class="dish-name">老鸭鸳鸯锅</text>
-            <text class="dish-name">老鸭鸳鸯锅</text>
-            <text class="dish-name">老鸭鸳鸯锅</text>
+    <view class="order-list" wx:for="{{dishList}}" wx:key="index">
+        <view class="list-main flex">
+            <text class="dish-name" wx:for="{{item.already_menu}}" wx:key="index" style="color:{{item.is_serving==0?'#333':'#999'}}">{{item.goods_name}} <text wx:if="{{item.number>1}}">x{{item.number}}</text></text>
         </view>
-        <view class="all-chose">
+        <!--<view class="all-chose">
             <label class="radio">
                 <radio class="radio-size" value="" checked="" color="#f2582a"/>全上
             </label>
-        </view>
-    </view>
-    <view class="order-list">
-        <view class="list-main flex border-after">
-            <text class="dish-name">老鸭鸳鸯锅</text>
-            <text class="dish-name">老鸭鸳鸯锅</text>
-            <text class="dish-name">老鸭鸳鸯锅</text>
-        </view>
-        <view class="all-chose">
-            <label class="radio">
-                <radio class="radio-size" value="" checked="" color="#f2582a"/>全上
-            </label>
-        </view>
+        </view>-->
     </view>
     <view class="total flex-wrp">
-        <view class="flex-item gray-text">就餐人数：12人</view>
-        <view><text>共4件 合计<text class="price">￥5264.00</text></text></view>
+        <view class="flex-item gray-text">就餐人数：{{num_peo}}</view>
+        <view><text>共{{totalNum}}件 菜品合计<text class="price">￥{{totalPrice}}</text></text></view>
     </view>
     <view class="btn-group flex-wrp">
-        <view class="flex-item"><text class="redBtn">继续点菜</text></view>
-        <view><text class="greenBtn">买单</text></view>
+        <view class="flex-item"><text wx:if="{{role==3}}" class="redBtn">继续点菜</text> <text wx:if="{{role==1||role==2}}" class="redBtn">删减</text></view>
+        <view>
+            <text bindtap="toPayBill" data-tm_id="{{tm_id}}" data-store_name="{{store_name}}" class="greenBtn">买单</text>  
+            <!--<text  wx:if="{{role==3&&isPayment==true}}">已付款</text>
+            <text  wx:if="{{role==1||role==2}}" class="greenBtn">线下支付</text>-->
+        </view>
     </view>
   </view>
-  <view class="box">
+  <view wx:if="{{storeVipCard}}" class="box">
+    <view bindtap="toVipCardHandle" class="vip-handle">惠员卡充{{storeVipCard.money}},享{{storeVipCard.discount}}折优惠,立即办理>></view>
+  </view>
+  <view class="box" style="margin-bottom:0">
     <view class="list-title  border-after">
         <view class="main flex-wrp flex-justify">
             <view class="flex-item">餐桌成员</view>
         </view>
     </view>
     <view class="list-continer pt-30 flex">
-        <view class="member-item">
-            <view><image class="head-por" mode="scaleToFill" src="/images/member-img.jpg"></image></view>
-            <text>萌妹纸</text>
-        </view>
-        <view class="member-item">
-            <view><image class="head-por" mode="scaleToFill" src="/images/member-img.jpg"></image></view>
-            <text>萌妹纸</text>
-        </view>
-        <view class="member-item">
-            <view><image class="head-por" mode="scaleToFill" src="/images/member-img.jpg"></image></view>
-            <text>萌妹纸</text>
-        </view>
-        <view class="member-item">
-            <view><image class="head-por" mode="scaleToFill" src="/images/member-img.jpg"></image></view>
-            <text>萌妹纸</text>
-        </view>
-        <view class="member-item">
-            <view><image class="head-por" mode="scaleToFill" src="/images/member-img.jpg"></image></view>
-            <text>萌妹纸</text>
+        <view class="member-item" wx:for="{{tableNumList}}" wx:key="{{index}}">
+            <view><image class="head-por" mode="scaleToFill" src="{{item.head_pic}}"></image></view>
+            <text>{{item.nickname}}</text>
         </view>
     </view>
   </view>
 </scroll-view>
+

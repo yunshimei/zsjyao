@@ -1,0 +1,25 @@
+<!--pages/today-bespoke/today-bespoke.wxml-->
+<view class="body">
+  <view class="re-head">
+      <view><text class="fwf-balance">今日预约（{{todayBespokeList.length}}）</text></view>
+  </view>
+  <view class="sz-info">
+      <view class="sz-bd" style="padding:0">
+          <view class="title">
+              <view class=" flex-wrp border-after">
+                  <view  style="padding-left:15px;" class="col1 flex-item">预约号</view>
+                  <view class="col2 flex-item">称呼</view>
+                  <view class="col3 flex-item">电话</view>
+              </view>
+          </view>
+          <view class="row" style="padding:0" wx:for="{{todayBespokeList}}" wx:key="" bindtouchstart="drawStart" bindtouchmove="drawMove" bindtouchend="drawEnd" data-id="{{item.id}}">
+              <view class="flex-wrp border-after bespoke-item {{idArr[index].status?'bespoke-move':''}}" data-dd="{{idArr[index].status}}">
+                  <view class="col1 flex-item red-text">{{item.number}}</view>
+                  <view class="col2 flex-item">{{item.name}}</view>
+                  <view class="col3 flex-item">{{item.phone}}</view>
+              </view>
+              <view class="remove" data-id="{{item.id}}" bindtap="delItem">删除</view>
+          </view>
+      </view>
+  </view>
+</view>

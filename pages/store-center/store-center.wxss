@@ -37,6 +37,10 @@
     font-size: 19px;
     vertical-align: middle;
 }
+.store-head .per-info{
+    color: #9d9d9d;
+    margin-top: 10px;
+}
 
 
 .store-control{
@@ -98,4 +102,11 @@
 }
 .green-text{
     color:#14ac8a;
+}
+.today-bespoke{
+  padding: 0px 15px;
+  height: 40px;
+  margin-top: 15px;
+  line-height: 40px;
+  /*position: relative;*/
 }

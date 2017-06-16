@@ -1,12 +1,18 @@
 /**我的页面**/
 .my-info{
   width: 100%;
-  height: 97px;
+  height: 100px;
   position: relative;
+  text-align: center;
 }
 .my-info>image{
   width: 100%;
   height: 100%;
+}
+.my-info .head-por{
+  width: 45px;
+  height: 45px;
+  border: 2px solid #fff;
 }
 .info{
   width: 100%;
@@ -17,11 +23,11 @@
   box-sizing: border-box;
 }
 .info .user-text{
-  margin-left: 15px;
+  /*margin-left: 15px;*/
 }
 .info .user-text .title{
   font-size: 15px;
-  margin-top: 13px;
+  margin-top: 5px;
   margin-bottom: 3px;
   font-weight: bold;
 }
@@ -96,18 +102,18 @@
   padding-bottom: 15px;
   position: relative;
 }
-.store-head{
+.client-store-head{
   width: 65px;
   height: 65px;
   padding-right: 15px;
 }
-.store-head image{
+.client-store-head image{
   width: 100%;
   height: 100%;
   border-radius: 50%;
 }
 .gastro-text{
-  padding-top: 5px;
+  padding-top: 15px;
 }
 .gastro-text .title{
   font-size: 14px;

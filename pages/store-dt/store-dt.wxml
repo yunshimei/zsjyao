@@ -1,28 +1,51 @@
-<view class="body">
+<view class="body-bottom50 {{status==3?'':'hide'}}">
     <view class="skin-box">
         <image class="skin-img" src="/images/skin-bg.jpg">
-            <text class="skin-text">老码头火锅红牌楼店</text>
+            
         </image>
+        <text class="skin-text">{{store_name}}</text>
     </view>
     <view class="notice-bar">
         <text class="notice">10号餐桌“花花公子”刚刚完成买单360元</text>
     </view>
     <scroll-view scroll-y="true" class="dt-box">
-        <view class="box">
+        <view class="box" wx:if="{{dtDataisShow}}" wx:for="{{dtDataArr}}" wx:key="{{index}}">
             <view class="list-title  border-after">
                 <view class="main flex-wrp flex-justify">
-                    <view class="flex-item">1号餐桌</view>
-                    <view class="r-arrow"><text class="coupon-num">12人</text></view>
+                    <view class="flex-item" bindtap="toSelHandle" data-tableId="{{item.table_id}}" data-tm_id="{{item.tm_id}}" data-eatNumber="{{item.eat_number}}">{{item.table_id}}号餐桌</view>
+                    <view bindtap="addNumberHandle" data-tm_id="{{item.tm_id}}"><text class="r-arrow"><text style="color:#f2582a">{{item.eat_number==0?'添加人数':'就餐人数'+item.eat_number+'人'}}</text></text></view>
                 </view>
             </view>
             <view class="list-continer">
                 <view class="dt-dish pt-30 flex">
-                    <view class="item"><view class="default-btn active-btn">老鸭鸳鸯锅</view></view>
-                    <view class="item"><view class="default-btn">老鸭鸳鸯锅鸳鸯锅</view></view>
-                    <view class="item"><view class="default-btn">老鸭鸳鸯锅</view></view>
-                    <view class="item"><view class="default-btn">老鸭鸳鸯锅</view></view>
+                    <view class="item" wx:for="{{item.order_menu}}" wx:key="{{index}}"><view data-id="{{item.id}}" data-tm_id="{{item.tm_id}}" class="default-btn" bindtap="servedHandle">{{item.goods_name}}</view></view> 
                 </view>
+                <view wx:if="{{item.order_menu.length<1}}" style="padding-bottom:15px;"><text>进餐中...</text></view>
             </view>
         </view>
     </scroll-view>
+</view>
+
+<view wx:if="{{addNumberIsShow}}"  class="pop-box">
+    <view class="pop-main">
+        <view class="pop-title">
+            <view class="pop-title-m">
+                <text class="border-after">添加就餐人数</text>
+            </view>
+        </view>
+        <view class="pop-bd">
+            <view class="input-item flex-wrp">
+                <text class="tip-text">就餐人数</text>
+                <input class="border-after flex-item" bindinput="numberInput" type="number" placeholder="输入人数" auto-focus/>
+            </view>
+        </view>
+        <view class="pop-bt flex-wrp">
+            <view bindtap="popCancelHandle" class="cancel-btn flex-item">
+                <text>取消</text>
+            </view>
+            <view bindtap="popConfirmHandle" class="confirm-btn flex-item">
+                <text>确认</text>
+            </view>
+        </view>
+    </view>
 </view>

@@ -1,6 +1,25 @@
-<view class="body">
+<!--<view class="body">
     <image style="width:100%;height:100%;display:block;" src="/images/entr-bg.jpg"></image>
-    <image class="wx-hd" src="/images/member-img.jpg"></image>
+    <view>
+        <image class="wx-hd" src="{{userInfo.avatarUrl}}"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
     <view class="enter-btn" bindtap="toRegister">商家入驻</view>
     <view class="sm-dc" bindtap="scanOrder">扫码点餐</view>
+</view>-->
+<view class="body">
+    <image style="width:100%;height:100%;display:block;" src="/images/entr-bg.jpg"></image>
+    <view class="entr-cont">
+        <view class="container">
+            <view  bindtap="bindViewTap" class="userinfo">
+                <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+                <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            </view>
+            <view  wx:if="{{role==0||role==2||role==3}}"  class="enter-btn" bindtap="toRegister">商家入驻</view>
+            <view wx:if="{{role==1}}" class="enter-btn" bindtap="toStoreDt" data-role="{{role}}">进入店铺</view>
+            <view class="sm-dc" bindtap="scanOrder">扫一扫</view>
+             <view class="entr-my" bindtap="toClientMy"></view>
+             <view wx:if="{{role==2}}" class="yg-Restaurant" bindtap="toStoreDt" data-role="{{role}}"> 进入员工餐厅</view>
+        </view>
+    </view>
 </view>

@@ -1,13 +1,20 @@
-<view class="body">
+<scroll-view class="body-bottom50 {{status==5?'':'hide'}}" scroll-y="true">
     <view class="store-head" bindtap="toModify">
         <view class="flex-wrp">
-            <image class="store-img" src="/images/member-img.jpg"></image>
+            <image class="store-img" src="{{logoImage}}"></image>
             <view class="flex-item store-info">
-                <view><text class="store-name">老码头火锅(红牌楼店)</text></view>
-                <view><text class="store-account">账号15389658569</text></view>
+                <view><text class="store-name">{{dataCenter.store_name || '未设置'}}</text></view>
+                <view><text class="store-account">账号{{dataCenter.seller_name || '未设置'}}</text></view>
             </view>
-            <view class="authen r-arrow">未认证</view>
+            <view wx:if="{{dataCenter.store_name != null}}" class="authen r-arrow">未认证</view>
+            <view wx:if="{{dataCenter.store_name == null}}"  class="r-arrow per-info">完善信息</view>
         </view>
+    </view>
+    <view class="box today-bespoke">
+      <view class="flex-wrp" bindtap="toTodayBespoke">
+        <view class="flex-item">今日预约({{dataCenter.count}})</view>
+        <view class="r-arrow"></view>
+      </view>
     </view>
     <view class="store-control flex-wrp">
         <view class="flex-item" bindtap="toStaffManage">
@@ -25,18 +32,19 @@
     </view>
     <view class="store-control flex-wrp">
         <view class="flex-item">
-            <view><span class="jrsy">0</span>元</view>
+            <view><span class="jrsy">{{dataCenter.today_money || 0}}</span>元</view>
             <view><text class="title">今日收银</text></view>
         </view>
         <view class="flex-item">
-            <view><span class="zhye">0</span>元</view>
+            <view><span class="zhye">{{dataCenter.store_money || 0}}</span>元</view>
             <view><text class="title">账户余额</text></view>
         </view>
         <view class="flex-item">
-            <view><span class="fwfye">0</span>元</view>
+            <view><span class="fwfye">{{dataCenter.service_money || 0}}</span>元</view>
             <view><text class="title">服务费余额</text></view>
         </view>
     </view>
+    
     <view class="sz-info">
         <view class="switch-bar">
             <view class="flex-wrp border-after">
@@ -75,20 +83,13 @@
                     <view class="col3 flex-item">时间</view>
                 </view>
             </view>
-            <view class="row">
+            <view class="row" wx:for="{{dataCenter.today}}" wx:key="{{index}}">
                 <view class=" flex-wrp border-after">
-                    <view class="col1 flex-item">7号桌</view>
-                    <view class="col2 red-text">+385.00</view>
-                    <view class="col3 flex-item data">2017.05.03 13:00:00</view>
-                </view>
-            </view>
-            <view class="row">
-                <view class=" flex-wrp border-after">
-                    <view class="col1 flex-item">提现</view>
-                    <view class="col2 green-text">-385.00</view>
-                    <view class="col3 flex-item data">2017.05.03 13:00:00</view>
+                    <view class="col1 flex-item">{{item.table_id}}号桌</view>
+                    <view class="col2 red-text">+{{item.order_amount}}</view>
+                    <view class="col3 flex-item data">{{item.time}}</view>
                 </view>
             </view>
         </view>
     </view>
-</view>
+</scroll-view> 

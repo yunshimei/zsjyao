@@ -2,14 +2,17 @@
     <view class="input-area">
         <view class="input-item flex-wrp">
             <text class="tip-text">姓名</text>
-            <input class="border-after flex-item" type="text" placeholder="店主姓名" auto-focus/>
+            <input class="border-after flex-item" bindinput="nameInput" type="text" placeholder="店主姓名" auto-focus/>
         </view>
         <view class="input-item flex-wrp">
             <text class="tip-text">身份证</text>
-            <input class="border-after flex-item" type="number" placeholder="身份证号码"/>
+            <input bindinput="idCardInput" class="border-after flex-item" type="number" placeholder="身份证号码"/>
         </view>
     </view>
+    <view class="erro-init">
+      <text>{{errorInit}}</text>
+    </view>
     <view class="btn-area">
-        <button style="background-color:#f2582a;color:#fff;" type="primary"> 提交 </button>
+        <button bindtap="submitHandle" style="background-color:#f2582a;color:#fff;" type="primary"> 提交 </button>
     </view>
 </view>

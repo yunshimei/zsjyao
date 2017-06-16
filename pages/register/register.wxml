@@ -2,60 +2,21 @@
     <image class="register-hd" style="width:100%;height:105px;display:block;"  src="/images/register-hd.jpg"></image>
     <view class="input-area">
         <view class="input-item flex-wrp">
-            <text class="tip-text">城市</text>
-            <input class="border-after flex-item" placeholder="请选择" value="{{finishValue}}" focus="{{focus}}" bindfocus="open" />
-        </view>
-        <view class="input-item flex-wrp">
             <text class="tip-text">手机</text>
-            <input class="border-after flex-item"  bindblur="phoneFinish" type="number" placeholder="手机号码" confirm-type="done" placeholder-style="font-size:13px;" />
+            <input class="border-after flex-item"  bindinput="userPhoneInput" type="number" placeholder="手机号码" confirm-type="done" placeholder-style="font-size:13px;" />
         </view>
         <view class="input-item flex-wrp">
             <text class="tip-text">验证码</text>
-            <input class="border-after flex-item" type="number" placeholder="输入验证码"/>
-            <view class="focus-code" bindtap="gainCode">点击获取验证码</view>
+            <input class="border-after flex-item" type="number" bindinput="codeHandle" placeholder="输入验证码"/>
+            <view class="focus-code" bindtap="getCodeHandle" disabled="{{codeBtnDisabled}}">{{codeTip}}</view>
         </view>
     </view>
     <view class="erro-init">
       <text>{{errorInit}}</text>
     </view>
     <view class="btn-area">
-        <button style="background-color:#f2582a;color:#fff;" type="primary"> 入驻 </button>
+        <button style="background-color:#f2582a;color:#fff;" type="primary" bindtap="submitHandler"> 入驻 </button>
         <view class="tip">点击注册，即表示已阅读并同意<text>《掌上佳肴服务条款》</text>协议</view>
     </view>
 </view>
 
-<!--<view wx:if="{{condition}}" class="citypicker">
-  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
-    <view class="cityheader">
-      <view bindtap="open" class="city-cancel">取消</view>
-      <view bindtap="open" class="city-true">确定</view>
-    </view>
-    <picker-view-column>
-      <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
-    </picker-view-column>
-    <picker-view-column>
-      <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
-    </picker-view-column>
-    <picker-view-column>
-      <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
-    </picker-view-column>
-  </picker-view>
-</view>-->
-<view wx:if="{{condition}}" class="citypicker">
-  <view>{{year}}年{{month}}月{{day}}日</view>
-  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
-    <view class="cityheader">
-      <view bindtap="open" class="city-cancel">取消</view>
-      <view bindtap="open" class="city-true">确定</view>
-    </view>
-    <picker-view-column>
-      <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;background-color:#fff;text-align:center">{{item}}</view>
-    </picker-view-column>
-    <picker-view-column>
-      <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;background-color:#fff;text-align:center">{{item}}</view>
-    </picker-view-column>
-    <picker-view-column>
-      <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;background-color:#fff;text-align:center">{{item}}</view>
-    </picker-view-column>
-  </picker-view>
-</view>

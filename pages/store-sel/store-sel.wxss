@@ -1,0 +1,35 @@
+/* pages/store-sel/store-sel.wxss */
+.minusIcon{
+  width: 18px;
+  height: 18px;
+  /*position: absolute;
+  left: 0;
+  z-index: 200;*/
+}
+.addDish{
+  width: 52px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #f2582a;
+  color: #fff;
+  border-radius: 6px;
+  margin-top: 12px;
+  font-size: 14px;
+  margin-right: 15px;
+}
+
+.staff-head{
+    position: relative;
+}
+.staff-head .addBlacklist{
+    position: absolute;
+    right: 5px;
+    top: -5px;
+}
+.staff-head .addBlacklist::before{
+    content: "\e67e";
+    font-family: "iconfont";
+    color: #f2582a;
+    font-size: 20px;
+}

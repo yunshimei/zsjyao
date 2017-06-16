@@ -1,0 +1,22 @@
+<!--pages/client-couponList/client-couponList.wxml-->
+<view class="box">
+    <view class="list-continer coupon-box">
+        <view class="coupon-item" wx:for="{{myCouponList}}" wx:key="" bindtap="toStoreCardInfo" data-store_id="{{item.store_id}}">
+            <view class="flex-wrp coupon-info  border-after">
+                    <view class="coupon-money">
+                        <image class="coupon-l" src="/images/coupon.png"></image>
+                        <text class="rmb">¥</text>
+                        <text class="je">{{item.money || '0'}}</text>
+                        <image class="coupon-r" src="/images/coupon.png"></image>
+                    </view>
+                    <view class="flex-item coupon-text">
+                        <view><text>{{item.store_name || ''}}</text></view>
+                        <view><text>店内满{{item.condition || '0'}}元可用</text></view>
+                        <view class="coupon-day">
+                            <text>{{item.use_start_time}}~{{item.use_end_time}}</text>
+                        </view>
+                    </view>
+            </view>
+        </view>
+    </view>
+</view>

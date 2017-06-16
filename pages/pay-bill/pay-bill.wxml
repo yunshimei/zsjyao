@@ -1,0 +1,104 @@
+<!--pages/pay-bill/pay-bill.wxml-->
+<scroll-view scroll-y="true" class="body-bottom50">
+    <view class="box">
+        <view class="list-title  border-after">
+            <view class="main flex-wrp flex-justify">
+                <view class="flex-item">账单</view>
+                <!--<view><text class="coupon-num">共 {{selVipCoupon.coupon.count}} 张</text></view>-->
+            </view>
+        </view>
+        <view class="payable">
+            <view class="moneyBar flex-wrp">
+                <view class="text-hd flex-item">菜品金额</view>
+                <view class="money">{{payInfo.price}}</view>
+            </view>
+            <view class="moneyBar flex-wrp">
+                <view class="text-hd flex-item">就餐人数</view>
+                <view class="money">{{payInfo.eat_number}}</view>
+            </view>
+            <view class="moneyBar flex-wrp">
+                <view class="text-hd flex-item">基本餐位费</view>
+                <view class="money">{{payInfo.meal_fee}}/人</view>
+            </view>
+            <view class="moneyBar flex-wrp">
+                <view class="text-hd flex-item">应付金额</view>
+                <view class="money">{{payInfo.meal_fee}}/人</view>
+            </view>
+        </view>
+    </view>
+    
+
+    <view class="box">
+        <view class="list-title  border-after">
+            <view class="main flex-wrp flex-justify">
+                <view class="flex-item">选择优惠券</view>
+                <!--<view><text class="coupon-num">共 {{selVipCoupon.coupon.count}} 张</text></view>-->
+            </view>
+        </view>
+        <view class="list-continer coupon-box">
+            <view class="coupon-item" wx:for="{{payInfo.coupon}}" wx:key="">
+                <view class="flex-wrp coupon-info  border-after">
+                        <view class="choseBtn">
+                            <label  class="radio">
+                              <radio bindtap="choseHandle" data-choseId="{{item.id}}" checked="{{item.id==choseId}}" color="#f2582a" />
+                            </label>
+                        </view>
+                        <view class="coupon-money" id="chsoeStyle">
+                            <image class="coupon-l" src="/images/coupon.png"></image>
+                            <text class="rmb">¥</text>
+                            <text class="je">{{item.money || '0'}}</text>
+                            <image class="coupon-r" src="/images/coupon.png"></image>
+                        </view>
+                        <view class="flex-item coupon-text">
+                            <view><text>{{store_name || ''}}</text></view>
+                            <view><text>店内满{{item.condition || '0'}}元可用</text></view>
+                            <view class="coupon-day">
+                                <text>{{item.use_start_time}}~{{item.use_end_time}}</text>
+                            </view>
+                        </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="box">
+        <view class="list-title  border-after">
+            <view class="main flex-wrp flex-justify">
+                <view class="flex-item">选择会员卡</view>
+                <!--<view><text class="coupon-num">共 {{selVipCoupon.mslist.count}} 张</text></view>-->
+            </view>
+        </view>
+        <view class="list-continer coupon-box">
+            <view class="vip-card-item flex-wrp" wx:for="{{payInfo.membership}}" wx:key="">
+              <view class="choseBtn">
+                  <label class="radio">
+                    <radio bindtap="choseHandle" data-choseId="{{item.ms_id}}" checked="{{item.ms_id==choseId}}" color="#f2582a" />
+                  </label>
+              </view>
+              <view class="flex-item" id="chsoeStyle">
+                  <view class="vip-card flex-wrp">
+                    <view class="flex-item vip-info">
+                      <view class="name">{{store_name || ''}}{{item.discount || '0'}}折</view>
+                      <view class="flex-wrp">
+                          <view class="price flex-item">余额 {{item.money || '0'}}</view>
+                          <view class="flex-item">单次折扣上限 {{item.max_money || '0'}}</view>
+                      </view>
+                    </view>
+                  </view>
+                  <view class="vip-time">有效期至：{{item.end_time}}</view>
+              </view>
+              
+            </view>
+        </view>
+    </view>
+</scroll-view>
+
+<view class="totleBar">
+    <view class="border-befor flex-wrp">
+        <view class="flex-item">
+            <text class="pay-tip">实付金额：</text>
+            <text class="pay-money">￥300</text>
+        </view>
+        <view class="payBtn">付款</view>
+    </view>
+</view>

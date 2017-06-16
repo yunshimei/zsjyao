@@ -1,0 +1,8 @@
+<!--pages/client/client.wxml-->
+
+<include src="../client-menu/client-menu" data="{{menuData:menuData,dataMenu:dataMenu,store_id:store_id,table_id:table_id,noData:noData,noDishData:noDishData,dishNum:dishNum,selArr:selArr,selNum:selNum,selHeight:selHeight,selCol:selCol}}" />
+<include src="../client-sel/client-sel" data="{{selData:selData,store_id:store_id,table_id:table_id,dishList:dishList,totalNum:totalNum,totalPrice:totalPrice,role:role,num_peo:num_peo,isPayment:isPayment,tableNumList:tableNumList,tm_id:tm_id,store_name:store_name}}" />
+<include src="../client-my/client-my" data="{{userInfo:userInfo,selVipCoupon:selVipCoupon}}" />
+
+<import src="../Template/footer/footer" />
+<template is="footer-client" data="{{status:status,storeNavHandle:storeNavHandle,selHandle:selHandle}}"></template>

@@ -1,0 +1,86 @@
+/* pages/my-card-list/my-card-list.wxss */
+.vip-haed{
+  background-color: #f2582a;
+  padding-bottom:0;
+  text-align:center;
+}
+.vip-handle-hd{
+  line-height: 50px;
+  font-size: 17px;
+  color: #fff;
+}
+.store_info{
+  padding: 15px 15px 10px 15px;
+  background-color: #fff;
+  margin-bottom: 15px;
+}
+.store_info>view{
+  margin-bottom: 5px;
+}
+.store-addr::before,.store-phone::before,.store-person::before{
+  font-family: 'iconfont';
+  vertical-align: middle;
+  margin-right: 5px;
+  font-size: 16px;
+}
+.store-addr::before{
+  content: '\e620';
+  color:#6dc243;
+}
+.store-phone::before{
+  content: '\e604';
+  color:#f2582a;
+}
+.store-person::before{
+  content: '\e619';
+  
+  color:#147fe3;
+}
+.sz-bd{
+  padding: 0 15px;
+  text-align: center;
+}
+.bespoke{
+  padding: 15px 15px 10px 15px;
+}
+.bespoke>view{
+ margin-bottom: 5px;
+}
+.bespoked{
+  color: #ff7c00;
+  font-weight: bold;
+}
+.bespoke-btn{
+  width: 80px;
+  height: 30px;
+  border-radius: 20px;
+  line-height: 30px;
+  text-align: center;
+  /*border:1px solid #f2582a;*/
+  background-color: #f2582a;
+  color: #fff;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.bespoke-btn-gary{
+  width: 80px;
+  height: 30px;
+  border-radius: 20px;
+  line-height: 30px;
+  text-align: center;
+  /*border:1px solid #f2582a;*/
+  background-color: #c8c8c8;
+  color: #fff;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.vip-tip-info{
+  /*padding-top: 15px;*/
+}
+.vip-tip-info text{
+  font-weight: bold;
+  color: dodgerblue;
+  text-decoration: underline;
+}

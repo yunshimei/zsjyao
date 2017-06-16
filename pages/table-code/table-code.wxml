@@ -1,6 +1,6 @@
 <scroll-view scroll-y="true" class="body">
     <view class="table-code-title">
-        <view class="header"><text>当前共有5桌</text></view>
+        <view class="header"><text>当前共有{{tableCode.length}}桌</text></view>
         <view class="tip">
             温馨提示：餐桌二维码桌数与月基本费相关,生成二维码默认同意<text>《二维码协议》</text>协议
         </view>
@@ -11,22 +11,14 @@
                 <image class="code" src="/images/add-code.png"></image>
                 <view class="txt"><text>点击添加餐桌二维码</text></view>
             </view>
-            <view class="code-item">
-                <image class="code" src="/images/code-img.jpg"></image>
-                <view class="txt"><text>3号餐桌二维码</text></view>
-            </view>
-            <view class="code-item">
-                <image class="code" src="/images/code-img.jpg"></image>
-                <view class="txt"><text>2号餐桌二维码</text></view>
-            </view>
-            <view class="code-item">
-                <image class="code" src="/images/code-img.jpg"></image>
-                <view class="txt"><text>1号餐桌二维码</text></view>
+            <view class="code-item" wx:for="{{tableCode}}" wx:key="{{index}}">
+                <image class="code" src="https://www.zsjyao.com/Public/{{item.c_img}}"></image>
+                <view class="txt"><text>{{item.table_id}}号餐桌二维码</text></view>
             </view>
         </view>
     </view>
 </scroll-view>
-<view  class="pop-box">
+<view wx:if="{{isShowPop}}"  class="pop-box">
     <view class="pop-main">
         <view class="pop-title">
             <view class="pop-title-m">
@@ -36,14 +28,14 @@
         <view class="pop-bd">
             <view class="input-item flex-wrp">
                 <text class="tip-text">桌数</text>
-                <input class="border-after flex-item" type="text" placeholder="需要生成的桌数" auto-focus/>
+                <input class="border-after flex-item" type="number" value="1" bindinput="codeNumInput" placeholder="需要生成的桌数" auto-focus/>
             </view>
         </view>
         <view class="pop-bt flex-wrp">
-            <view class="cancel-btn flex-item">
+            <view class="cancel-btn flex-item" bindtap="cancelPop">
                 <text>取消</text>
             </view>
-            <view class="confirm-btn flex-item">
+            <view class="confirm-btn flex-item" bindtap="confirmPop">
                 <text>确认</text>
             </view>
         </view>

@@ -1,0 +1,86 @@
+<!--pages/store-sel/store-sel.wxml-->
+<scroll-view scroll-y="true" class="body">
+  <view class="desk-num flex-wrp">
+    <view class="flex-item">{{table_id}}号餐桌</view>
+    <view class="addDish" bindtap="toClientMenu" data-tm_id="{{}}">加菜</view>
+  </view>
+  <view class="box">
+    <view class="list-title  border-after">
+        <view class="main flex-wrp flex-justify">
+            <view class="flex-item">以点菜单</view>
+            <!--<view class="r-arrow"></view>-->
+            <view class="flex-wrp number">
+                <view bindtap="addNumberHandle"><text style="color:#f2582a">{{eat_number==0?'添加人数':'就餐人数'+eat_number+'人'}}</text></view>
+            </view>
+        </view>
+    </view>
+    <view class="order-list" wx:for="{{dishList}}" wx:key="index">
+        <view class="list-main flex">
+            <view class="dish-name" wx:for="{{item.already_menu}}" wx:key="index" style="color:{{item.is_serving==0?'#333':'#999'}};width:50%">
+                {{item.goods_name}} 
+                <text wx:if="{{item.number>1}}">x{{item.number}}</text>
+                <image class="minusIcon" wx:if="{{item.is_serving==0&&isShowMinusIcon}}" src="/images/minus.png" bindtap="minusHandle" data-id = "{{item.id}}"></image>
+            </view>
+        </view>
+        <view class="all-chose">
+            <label class="radio" bindtap="allChoseHandle" data-singleAllDish="{{item.singleAllDish}}" data-isAll="{{item.isAll}}">
+                <radio class="radio-size" value="" checked="{{item.isAll}}" color="#f2582a"/>全上
+            </label>
+        </view>
+    </view>
+    <view class="total flex-wrp">
+        <view class="flex-item gray-text">就餐人数：{{eat_number}}</view>
+        <view><text>共{{totalNum}}件 合计<text class="price">￥{{totalPrice}}</text></text></view>
+    </view>
+    <view class="btn-group flex-wrp">
+        <view class="flex-item">
+          <text  class="redBtn" bindtap="cutDishHandle">删减</text>
+        </view>
+        <view> 
+            <text>已付款</text>
+            <text class="greenBtn">线下支付</text></view>
+        </view>
+  </view>
+
+  <view class="box" style="margin-bottom:0">
+    <view class="list-title  border-after">
+        <view class="main flex-wrp flex-justify">
+            <view class="flex-item">餐桌成员</view>
+        </view>
+    </view>
+    <view class="list-continer pt-30 flex">
+        <view class="member-item" wx:for="{{tableNumList}}" wx:key="{{index}}">
+            <view class="staff-head">
+                <image class="head-por" mode="scaleToFill" src="{{item.head_pic}}"></image>
+                <view class="addBlacklist" bindtap="addBlacklistHandle" data-name="{{item.nickname}}" data-id="{{item.user_id}}"></view>
+            </view>
+            <text>{{item.nickname}}</text>
+        </view>
+    </view>
+  </view>
+</scroll-view>
+
+<view wx:if="{{addNumberIsShow}}"  class="pop-box">
+    <view class="pop-main">
+        <view class="pop-title">
+            <view class="pop-title-m">
+                <text class="border-after">添加就餐人数</text>
+            </view>
+        </view>
+        <view class="pop-bd">
+            <view class="input-item flex-wrp">
+                <text class="tip-text">就餐人数</text>
+                <input class="border-after flex-item" bindinput="numberInput" type="number" placeholder="输入人数" auto-focus/>
+            </view>
+        </view>
+        <view class="pop-bt flex-wrp">
+            <view bindtap="popCancelHandle" class="cancel-btn flex-item">
+                <text>取消</text>
+            </view>
+            <view bindtap="popConfirmHandle" class="confirm-btn flex-item">
+                <text>确认</text>
+            </view>
+        </view>
+    </view>
+</view>
+

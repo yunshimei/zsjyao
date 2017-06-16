@@ -1,0 +1,11 @@
+/* pages/client-vipCard/client-vipCard.wxss */
+.vipCardList{
+  padding-top: 15px;
+}
+.vipCardList .vip-card-item{
+  padding-top: 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+}

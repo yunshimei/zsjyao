@@ -1,15 +1,24 @@
-.release,.set-coupon,.set-style{
+/*.release,.set-coupon,.set-style{
     margin-top: 15px;
+}*/
+.couponBox{
+  padding: 0 15px;
 }
-
+.couponBox .col2,.couponBox .col3,.couponBox .col4{
+  text-align: center;
+}
 .coupon-style{
     padding: 15px 0;
 }
 .set-coupon .input-item{
     padding: 0;
 }
+.set-coupon .from{
+   /*margin-right: 15px;*/
+}
 .set-coupon .to{
-    margin: 0 15px;
+    
+   /*margin: 0 15px;*/
 }
 .coupon-tip{
     padding: 0 15px;
@@ -18,4 +27,19 @@
 }
 .coupon-tip text{
     color: #f2582a;
+}
+.dataChose{
+  position: relative;
+}
+.dataChose .picker{
+  position: absolute;
+  left: 0;
+}
+.swidthBtn{
+  transform: scale(.8);
+  -webkit-transform:  scale(.8);
+}
+.row1{
+  height: 40px;
+  line-height: 40px;
 }

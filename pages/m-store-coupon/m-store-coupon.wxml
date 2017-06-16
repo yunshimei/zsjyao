@@ -1,96 +1,143 @@
 <scroll-view scroll-y="true" class="body">
     <view class="switch-bar">
         <view class="flex-wrp border-after">
-            <view class="flex-item active">发布优惠券</view>
-            <view class="flex-item">有效优惠券</view>
+            <view class="flex-item {{status==0?'active':''}}" bindtap="navHandle" data-status="0">发布优惠券</view>
+            <view class="flex-item {{status==1?'active':''}}"  bindtap="navHandle" data-status="1">有效优惠券</view>
         </view>
     </view>
-    <view class="release">
-        <view class="box">
-            <view class="list-title  border-after">
-                <view class="main flex-wrp flex-justify">
-                    <view class="flex-item">优惠券方式</view>
-                </view>
-            </view>
-            <view class="list-continer">
-                <view class="flex-wrp coupon-style">
-                    <view class="flex-item">
-                        <label class="radio">
-                            <radio class="radio-size" value="" checked="" color="#f2582a"/>消费后送券
-                        </label>
+    <view wx:if="{{status==0}}">
+        <view class="release">
+            <view class="box">
+                <view class="list-title  border-after">
+                    <view class="main flex-wrp flex-justify">
+                        <view class="flex-item">优惠券类型</view>
                     </view>
-                    <view class="flex-item">
-                        <label class="radio">
-                            <radio class="radio-size" value="" checked="" color="#f2582a"/>消费前送券
-                        </label>
+                </view>
+                <view class="list-continer">
+                    <view class="flex-wrp coupon-style">
+                        <view class="flex-item">
+                            <label class="radio">
+                                <radio class="radio-size" value="1" checked="true" color="#f2582a"/>消费后送券
+                            </label>
+                        </view>
                     </view>
                 </view>
             </view>
         </view>
-    </view>
-    <view class="set-coupon">
-        <view class="box">
-            <view class="list-title  border-after">
-                <view class="main flex-wrp flex-justify">
-                    <view class="flex-item">设置优惠券</view>
+        <view class="set-coupon">
+            <view class="box">
+                <view class="list-title  border-after">
+                    <view class="main flex-wrp flex-justify">
+                        <view class="flex-item">设置优惠券</view>
+                    </view>
                 </view>
-            </view>
-            <view class="list-continer">
-                <view class="set-coupon-bd">
-                     <view class="input-area">
-                        <view class="input-item flex-wrp">
-                            <text class="tip-text">消费金额</text>
-                            <input class="border-after flex-item" type="number" placeholder="输入金额" auto-focus/>
-                            <text class="tip-text  flex-item">元</text>
-                        </view>
-                        <view class="input-item flex-wrp">
-                            <text class="tip-text">送券张数</text>
-                            <input class="border-after flex-item" type="number" placeholder="输入张数"/>
-                            <text class="tip-text  flex-item">张</text>
-                        </view>
-                        <view class="input-item flex-wrp">
-                            <text class="tip-text">单券价值</text>
-                            <input class="border-after flex-item" type="number" placeholder="输入单券价值"/>
-                            <text class="tip-text  flex-item">元</text>
-                        </view>
-                        <view class="input-item flex-wrp">
-                            <text class="tip-text">有效时间</text>
-                            <input class="border-after flex-item" type="text" placeholder="选择开始时间"/>
-                            <text class="to">到</text>
-                            <input class="border-after flex-item" type="text" placeholder="选择结束时间"/>
-                        </view>
-                    </view>   
+                <view class="list-continer">
+                    <view class="set-coupon-bd">
+                        <view class="input-area">
+                            <view class="input-item flex-wrp">
+                                <view class="tip-text">消费金额</view>
+                                <view  class="border-after flex-item">
+                                  <input type="number" bindinput="moneyInput" value="{{money?money:''}}" placeholder="输入金额"/>
+                                </view>
+                                <!--<view class="tip-text  flex-item">元</view>-->
+                            </view>
+                            <view class="input-item flex-wrp">
+                                <view class="tip-text">送券张数</view>
+                                <view class="border-after flex-item">
+                                  <input type="number" value="{{num?num:''}}" bindinput="numberInput" placeholder="输入张数(1-100张之间)"/>
+                                </view>
+                                <!--<view class="tip-text  flex-item">张</view>-->
+                            </view>
+                            <view class="input-item flex-wrp">
+                                <view class="tip-text">单券价值</view>
+                                <view class="border-after flex-item">
+                                    <input type="number" value="{{worth?worth:''}}" bindinput="worthInput" placeholder="输入单券价值"/>
+                                </view>
+                                <!--<view class="tip-text  flex-item">元</view>-->
+                            </view>
+                            <!--<view class="input-item">
+                              <view class="border-after  flex-wrp">
+                                  <view class="tip-text">发放时间</view>
+                                  <view class="from">从 </view>
+                                  <view class="section dataChose flex-item">
+                                      <picker mode="date" value="{{grantStrarData}}" start="2017-01-01" end="2050-12-12" bindchange="bindgrantStrarData" style="{{grantStrarData=='开始时间'?'color:#808080':''}}">
+                                        <view class="picker">
+                                          {{grantStrarData}}
+                                        </view>
+                                      </picker>
+                                  </view>
+                                  <view class="to">到</view>
+                                  <view class="section dataChose flex-item">
+                                      <picker mode="date" value="{{grantEndData}}" start="2017-01-01" end="2050-12-12" bindchange="bindgrantEndData" style="{{grantEndData=='结束时间'?'color:#808080':''}}">
+                                        <view class="picker">
+                                          {{grantEndData}}
+                                        </view>
+                                      </picker>
+                                  </view>
+                              </view>
+                                
+                            </view>-->
+                            <view class="input-item">
+                              <view class="border-after  flex-wrp">
+                                  <view class="tip-text">有效时间</view>
+                                  <view class="from">从 </view>
+                                  <view class="section dataChose flex-item">
+                                      <!--<view class="section__title">开始时间</view>-->
+                                      <picker mode="date" value="{{useStrarData}}" start="{{currentData}}" end="2050-12-12" bindchange="binduseStrarData" style="{{useStrarData=='开始时间'?'color:#808080':''}}">
+                                        <view class="picker">
+                                          {{useStrarData}}
+                                        </view>
+                                      </picker>
+                                  </view>
+                                  <view class="to">到</view>
+                                  <view class="section dataChose flex-item">
+                                      <!--<view class="section__title">结束时间</view>-->
+                                      <picker mode="date" value="{{useEndData}}" start="{{currentData}}" end="2050-12-12" bindchange="binduseEndData" style="{{useEndData=='结束时间'?'color:#808080':''}}">
+                                        <view class="picker">
+                                          {{useEndData}}
+                                        </view>
+                                      </picker>
+                                  </view>
+                              </view>
+                                
+                            </view>
+                        </view>   
+                    </view>
                 </view>
             </view>
         </view>
-    </view>
-    <view class="set-style">
-        <view class="box">
-            <view class="list-title  border-after">
-                <view class="main flex-wrp flex-justify">
-                    <view class="flex-item">发布方式</view>
-                </view>
-            </view>
-            <view class="list-continer">
-                <view class="flex-wrp coupon-style">
-                    <view class="flex-item">
-                        <label class="radio">
-                            <radio class="radio-size" value="" checked="" color="#f2582a"/>同城发布
-                        </label>
-                    </view>
-                    <view class="flex-item">
-                        <label class="radio">
-                            <radio class="radio-size" value="" checked="" color="#f2582a"/>向老顾客发布
-                        </label>
-                    </view>
-                </view>
-            </view>
+        <!--<view class="coupon-tip">
+            注：发布成功后自动从预存服务服中扣出手续费<text>30元</text>
+        </view>-->
+        <view wx:if="{{errorInit}}" class="erro-init">
+          <text>{{errorInit}}</text>
+        </view>
+        <view class="btn-area">
+            <button bindtap="couponBtnHandle" style="background-color:#f2582a;color:#fff;" type="primary"> 发布 </button>
         </view>
     </view>
-    <view class="coupon-tip">
-        注：发布成功后自动从预存服务服中扣出手续费<text>30元</text>
-    </view>
-    <view class="btn-area">
-        <button style="background-color:#f2582a;color:#fff;" type="primary"> 提交 </button>
-    </view>
+    <scroll-view scroll-y="true"  wx:if="{{status==1}}">
+        <view class="box" style="margin-bottom:0">
+          <view class="sz-bd couponBox">
+              <view class="title">
+                  <view class=" flex-wrp border-after memberListHd">
+                      <view class="col1 flex-item">优惠券</view>
+                      <view class="col2 flex-item">已发送</view>
+                      <view class="col3 flex-item">已使用</view>
+                      <view class="col4 flex-item">是否发放</view>
+                  </view>
+              </view>
+              <view class="row" wx:for="{{couponList}}" style="height:40px;line-height:40px;padding:0" wx:key="">
+                  <view class=" flex-wrp border-after">
+                      <view class="col1 flex-item">满{{item.condition}}减{{item.money}}</view>
+                      <view class="col2 flex-item red-text">{{item.send_num}}</view>
+                      <view class="col3 flex-item">{{item.use_num}}</view>
+                      <view class="col4 flex-item">
+                        <switch class="swidthBtn" data-id="{{item.id}}" checked="{{item.is_open}}" bindtap="showHideHandle"  bindchange="switch1Change"/>
+                      </view>
+                  </view>
+              </view>
+          </view>
+        </view>
+    </scroll-view>
 </scroll-view>

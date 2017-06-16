@@ -1,0 +1,7 @@
+<!--pages/store/store.wxml-->
+<include src="../store-dt/store-dt" data="{{store_name:store_name,dtDataArr:dtDataArr,addNumberIsShow:addNumberIsShow,table_id:table_id,dtDataisShow:dtDataisShow}}" />
+<include src="../store-menu/store-menu" data="{{dataMenu:dataMenu,noData:noData,isHide:isHide,noDishData:noDishData,dishClassHandle:dishClassHandle,st_id:st_id,toAddDish:toAddDish,toMOdifyDish:toMOdifyDish,bascPri:bascPri}}" />
+<include src="../store-center/store-center" data="{{toModify:toModify,toStaffManage:toStaffManage,toTableCode:toTableCode,toRecharge:toRecharge,dataCenter:dataCenter,logoImage:logoImage}}" />
+
+<import src="../Template/footer/footer" />
+<template is="footer-store" data="{{status:status,navHandle:navHandle,footerIsShow:footerIsShow}}"></template>

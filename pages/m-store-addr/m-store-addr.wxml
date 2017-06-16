@@ -1,16 +1,37 @@
 <view class="body">
     <view class="input-area">
         <view class="input-item flex-wrp">
-            <text class="tip-text">选择地区</text>
-            <input class="border-after flex-item" type="text" placeholder="地区信息" auto-focus/>
-            <view class="location"></view>
+            <text class="tip-text">城市</text>
+            <input class="border-after flex-item" placeholder="请选择" focus="{{focus}}" id="areaInput"  bindtap="open" disabled="true"  value="{{province}}{{city}}{{county}}"/>
         </view>
         <view class="input-item flex-wrp">
             <text class="tip-text">详细地址</text>
-            <input class="border-after flex-item" type="text" placeholder="街道门牌信息"/>
+            <input class="border-after flex-item" bindinput="addrInput" type="text" placeholder="街道门牌信息"/>
         </view>
     </view>
-    <view class="btn-area">
-        <button style="background-color:#f2582a;color:#fff;" type="primary"> 提交 </button>
+    <view class="erro-init">
+      <text>{{errorInit}}</text>
     </view>
+    <view class="btn-area">
+        <button style="background-color:#f2582a;color:#fff;" type="primary" bindtap="submitHandle"> 提交 </button>
+    </view>
+</view>
+
+
+<view wx:if="{{condition}}" class="citypicker">
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+    <view class="cityheader">
+      <view bindtap="cancelHandle" class="city-cancel">取消</view>
+      <view bindtap="confirmHandle" class="city-true">确定</view>
+    </view>
+    <picker-view-column>
+      <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;background-color:#fff;text-align:center">{{item.name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;background-color:#fff;text-align:center">{{item.name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;background-color:#fff;text-align:center">{{item.name}}</view>
+    </picker-view-column>
+  </picker-view>
 </view>

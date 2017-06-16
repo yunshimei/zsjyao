@@ -1,41 +1,42 @@
 .footer{
-    height: 100rpx;
+    height: 50px;
     background-color: #ffffff;
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
     flex-direction:row;
-    font-size: 22rpx;
-    color: #9d9d9d;
+    font-size: 12px;
+    color: #7e7f80;
+    z-index: 800;
 }
-.footer .menu,.footer .sel,.footer .my{
+.footer .menu,.footer .sel,.footer .my,.footer .store-menu,.footer .store-dt,.footer .store-center{
     text-align: center;
-    padding-top: 12rpx;
+    padding-top: 7px;
 }
-.footer .menu::before,.footer .sel::before,.footer .my::before{
+.footer .menu::before,.footer .sel::before,.footer .my::before,.footer .store-menu::before,.footer .store-dt::before,.footer .store-center::before{
     font-family: "iconfont";
     display: block;
-    font-size: 40rpx;
+    font-size: 20px;
 }
 .footer .menu::before{
-    content: '\e624';
+    content: '\e611';
 }
 .footer .sel::before{
-    content: '\e66c';
-}
-.footer .my::before{
-    content: '\e66e';
-}
-.footer .active.menu::before{
-    content: '\e616';
-}
-.footer .active.sel::before{
     content: '\e64f';
 }
-.footer .active.my::before{
+.footer .my::before{
     content: '\e61b';
 }
+.footer .store-menu::before{
+    content: '\e611';
+}
+.footer .store-dt::before{
+    content: '\e616';
+}
+.footer .store-center::before{
+    content: '\e600';
+}
 .footer .active{
-    color: #f2582a;
+  color: #f2582a;
 }

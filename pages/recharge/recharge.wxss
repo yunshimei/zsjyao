@@ -35,3 +35,11 @@
     font-size: 12px;
     color: #ec9176;
 }
+.re-chose{
+  font-weight: bold;
+}
+.re-chose::before{
+  content: "\e64e";
+  font-family: "iconfont";
+  margin-right: 5px;
+}

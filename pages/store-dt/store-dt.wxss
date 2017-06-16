@@ -15,6 +15,10 @@
 .dt-box{
     position: absolute;
     top:155px;
+    bottom:0;
+}
+.dt-box:last-child{
+  margin-bottom: 0;
 }
 .dt-box .dt-dish{
     width: 100%;

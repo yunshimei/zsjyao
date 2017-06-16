@@ -1,51 +1,40 @@
-.modify .modify-item{
-    background-color: #fff;
-    padding: 10px 15px;
-    margin-bottom: 15px;
+
+.modify-item .r-arrow{
+  color: #9d9d9d;
+ }
+
+ .modify .header{
+   width: 100%;
+   height: 80px;
+   padding-left: 15px;
+   line-height: 80px;
+   background-color: #fff;
+   box-sizing: border-box;
+ }
+ .modify .header-c{
+   height: 100%;
+ }
+ .modify .header image{
+   width: 60px;
+   height: 60px;
+   border-radius: 5px;
+   margin: 10px 15px;
+ }
+
+ .modify .store-info{
+   margin-top: 15px;
+   padding-left: 15px;
+   background-color: #fff;
+ }
+ .modify .modify-item{
+   position: relative;
+   padding: 15px 15px 15px 0;
+ }
+#switchBar{
+  padding:0;
+  height:46px;
+  line-height:46px;
 }
- .modify-item .r-arrow{
-     color: #9d9d9d;
- }
- .modify-item .tip::before{
-     content: '';
-     font-family: "iconfont";
-     font-size: 16px;
-     margin-right: 5px;
-     vertical-align: middle;
- }
- .modify-item .skin::before{
-     content: '\e61a';
-     color: #f2582a;
- }
-  .modify-item .store-name::before{
-     content: '\e600';
-     color: #6dc243;
- }
-  .modify-item .store-addr::before{
-     content: '\e620';
-     color: #26b79a;
- }
-  .modify-item .store-phone::before{
-     content: '\e682';
-     color: #3f8dbe;
- }
-  .modify-item .store-authen::before{
-     content: '\e6a4';
-     color: #f2582a;
-     font-size: 17px;
- }
-  .modify-item .store-coupon::before{
-     content: '\e6c8';
-     color: #7596ff;
- }
-  .modify-item .store-cash::before{
-     content: '\e609';
-     color: #46b989;
-     font-size: 17px;
- }
-  .modify-item .store-blacklist::before{
-     content: '\e6c7';
-     color: #147fe3;
- }
+
  
  
