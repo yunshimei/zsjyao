@@ -1,0 +1,5 @@
+# exclude IDE files
+.idea
+*.sublime-project
+*.sublime-workspace
+*.project
